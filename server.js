@@ -1,5 +1,7 @@
-// initial server.js file
-// Use Express for routing
+//app.use(routing)
+//mongodb or SQL
+
+
 const express = require('express');
 
 const app = express();
