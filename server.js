@@ -1,5 +1,6 @@
 //app.use(routing)
 //mongodb or SQL
+// Use spotify API to pull in created playlist
 
 
 const express = require('express');
