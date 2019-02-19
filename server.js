@@ -8,9 +8,9 @@ const PORT = process.env.PORT || 3000;
 
 const routes = require('./routes');
 
-app.get('/', (req, res) => {
-  res.send('works');
-});
+// app.get('/', (req, res) => {
+//   res.send('works');
+// });
 
 app.use(routes);
 
