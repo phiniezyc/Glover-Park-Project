@@ -1,8 +1,3 @@
-
-const spotifyPlaylist = {
-
-
-};
+const spotifyPlaylist = {};
 
 module.exports = spotifyPlaylist;
-

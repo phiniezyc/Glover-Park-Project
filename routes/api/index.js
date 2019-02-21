@@ -1,7 +1,9 @@
 const router = require('express').Router();
 
-const spotifyRoutes = require('./spotify');
+const spotifyPlaylistRoutes = require('./spotifyPlaylist');
+const spotifyAuthRoutes = require('./spotifyAuth');
 
-router.use('/spotify', spotifyRoutes);
+
+router.use('/spotify', spotifyPlaylistRoutes, spotifyAuthRoutes);
 
 module.exports = router;
