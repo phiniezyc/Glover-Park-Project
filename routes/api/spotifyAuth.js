@@ -6,9 +6,9 @@ const cookieParser = require('cookie-parser');
 
 const secrets = require('../../secrets.js');
 
-const client_id = secrets.client_id; // Your client id
-const client_secret = secrets.client_secret; // Your secret
-const redirect_uri = secrets.redirect_uri; // Your redirect uri
+const client_id = secrets.client_id;
+const client_secret = secrets.client_secret;
+const redirect_uri = secrets.redirect_uri; 
 
 /**
  * Generates a random string containing numbers and letters
