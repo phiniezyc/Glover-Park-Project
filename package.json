@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/phiniezyc/Glover-Park-Project#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "nodemon": "^1.18.10",
     "querystring": "^0.2.0",
