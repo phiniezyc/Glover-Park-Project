@@ -1,5 +1,3 @@
-// use implicit OAuth2 strategy to get auth from single page react app
-
 const express = require('express');
 
 const app = express();
