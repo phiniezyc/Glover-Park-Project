@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const router = require('express').Router(); // Express web server framework
 const request = require('request'); // "Request" library
 const querystring = require('querystring');
@@ -73,11 +74,12 @@ router.get('/callback', (req, res) => {
 
         // use the access token to access the Spotify Web API
         request.get(options, (error, response, body) => {
-          console.log(body); // this is how we get the response on server side
+          console.log(body);// this is how we get the response on server side
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect(`/#${querystring.stringify({ access_token, refresh_token })}`); // How we redirect to new page once hit spotify API, access tokens are pass in query string on client--don't use both methods!
+        // res.redirect(`/#${querystring.stringify({ access_token, refresh_token })}`); // How we redirect to new page once hit spotify API, access tokens are pass in query string on client--don't use both methods!
+        res.send('success!');
       } else {
         res.redirect(`/#${querystring.stringify({ error: 'invalid_token' })}`);
       }
@@ -102,8 +104,8 @@ router.get('/refresh_token', (req, res) => {
 
   request.post(authOptions, (error, response, body) => {
     if (!error && response.statusCode === 200) {
-      const { accessToken } = body;
-      res.send({ accessToken });
+      const { access_token } = body;
+      res.send({ access_token });
     }
   });
 });
