@@ -63,7 +63,7 @@ app.get('/callback', (req, res) => {
         grant_type: 'authorization_code',
       },
       headers: {
-        Authorization: `Basic ${new Buffer(`${ clientId }:${ clientSecret }`).toString('base64')}`,
+        Authorization: `Basic ${new Buffer(`${clientId}:${clientSecret}`).toString('base64')}`,
       },
       json: true,
     };
@@ -102,7 +102,7 @@ app.get('/refresh_token', (req, res) => {
     url: 'https://accounts.spotify.com/api/token',
     headers: {
       // need to convert newBuffer to Buffer.from()...
-      Authorization: `Basic ${new Buffer(`${ clientId }:${ clientSecret }`).toString('base64')}`,
+      Authorization: `Basic ${new Buffer(`${clientId}:${clientSecret}`).toString('base64')}`,
     },
     form: {
       grant_type: 'refresh_token',
