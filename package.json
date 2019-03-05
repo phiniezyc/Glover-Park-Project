@@ -20,6 +20,8 @@
   "homepage": "https://github.com/phiniezyc/Glover-Park-Project#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "querystring": "^0.2.0",
+    "request": "^2.88.0"
   }
 }
