@@ -119,4 +119,4 @@ app.get('/refresh_token', (req, res) => {
 });
 
 
-module.exports = router;
+module.exports = app;
