@@ -4,11 +4,8 @@ const cors = require('cors');
 const querystring = require('querystring');
 const cookieParser = require('cookie-parser');
 
-const secrets = require('../../secrets.js');
+const { clientId, clientSecret, redirectUri } = require('../../secrets.js');
 
-const client_id = secrets.client_id;
-const client_secret = secrets.client_secret;
-const redirect_uri = secrets.redirect_uri; 
 
 /**
  * Generates a random string containing numbers and letters
@@ -41,7 +38,7 @@ app.get('/login', (req, res) => {
   // your application requests authorization
   const scope = 'user-read-private user-read-email';
   res.redirect(`https://accounts.spotify.com/authorize?${querystring.stringify({
-    response_type: 'code', client_id, scope, redirect_uri, state,
+    response_type: 'code', clientId, scope, redirectUri, state,
   })}`);
 });
 
@@ -62,11 +59,11 @@ app.get('/callback', (req, res) => {
       url: 'https://accounts.spotify.com/api/token',
       form: {
         code,
-        redirect_uri,
+        redirectUri,
         grant_type: 'authorization_code',
       },
       headers: {
-        Authorization: `Basic ${new Buffer(`${client_id}:${client_secret}`).toString('base64')}`,
+        Authorization: `Basic ${new Buffer(`${ clientId }:${ clientSecret }`).toString('base64')}`,
       },
       json: true,
     };
@@ -79,7 +76,7 @@ app.get('/callback', (req, res) => {
         const options = {
           url: 'https://api.spotify.com/v1/me',
           headers: {
-            Authorization: `Bearer ${access_token}`,
+            Authorization: `Bearer ${accessToken}`,
           },
           json: true,
         };
@@ -104,7 +101,7 @@ app.get('/refresh_token', (req, res) => {
   const authOptions = {
     url: 'https://accounts.spotify.com/api/token',
     headers: {
-      Authorization: `Basic ${new Buffer(`${client_id}:${client_secret}`).toString('base64')}`,
+      Authorization: `Basic ${new Buffer(`${ clientId }:${ clientSecret }`).toString('base64')}`,
     },
     form: {
       grant_type: 'refresh_token',
