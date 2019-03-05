@@ -97,7 +97,7 @@ app.get('/callback', (req, res) => {
 
 app.get('/refresh_token', (req, res) => {
   // requesting access token from refresh token
-  const refresh_token = req.query.refresh_token;
+  const { refreshToken } = req.query;
   const authOptions = {
     url: 'https://accounts.spotify.com/api/token',
     headers: {
@@ -105,7 +105,7 @@ app.get('/refresh_token', (req, res) => {
     },
     form: {
       grant_type: 'refresh_token',
-      refresh_token,
+      refreshToken,
     },
     json: true,
   };
