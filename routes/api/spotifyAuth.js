@@ -112,8 +112,8 @@ app.get('/refresh_token', (req, res) => {
 
   request.post(authOptions, (error, response, body) => {
     if (!error && response.statusCode === 200) {
-      const access_token = body.access_token;
-      res.send({ access_token });
+      const { accessToken } = body;
+      res.send({ accessToken });
     }
   });
 });
