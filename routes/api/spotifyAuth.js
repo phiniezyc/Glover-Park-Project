@@ -101,6 +101,7 @@ app.get('/refresh_token', (req, res) => {
   const authOptions = {
     url: 'https://accounts.spotify.com/api/token',
     headers: {
+      // need to convert newBuffer to Buffer.from()...
       Authorization: `Basic ${new Buffer(`${ clientId }:${ clientSecret }`).toString('base64')}`,
     },
     form: {
