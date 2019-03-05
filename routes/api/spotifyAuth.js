@@ -1,4 +1,4 @@
-const express = require('express'); // Express web server framework
+const router = require('express').Router; // Express web server framework
 const request = require('request'); // "Request" library
 const cors = require('cors');
 const querystring = require('querystring');
@@ -31,7 +31,7 @@ app
   .use(cors())
   .use(cookieParser());
 
-app.get('/login', (req, res) => {
+router.get('/login', (req, res) => {
   const state = generateRandomString(16); // generate a random value for cookie
   res.cookie(stateKey, state); // stateKey = cookie name & state = cookie value
 
@@ -42,7 +42,7 @@ app.get('/login', (req, res) => {
   })}`);
 });
 
-app.get('/callback', (req, res) => {
+router.get('/callback', (req, res) => {
   // your application requests refresh and access tokens after checking the state
   // parameter
   const code = req.query.code || null;
@@ -95,7 +95,7 @@ app.get('/callback', (req, res) => {
   }
 });
 
-app.get('/refresh_token', (req, res) => {
+router.get('/refresh_token', (req, res) => {
   // requesting access token from refresh token
   const { refreshToken } = req.query;
   const authOptions = {
@@ -119,4 +119,4 @@ app.get('/refresh_token', (req, res) => {
 });
 
 
-module.exports = app;
+module.exports = router;
