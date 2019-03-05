@@ -32,8 +32,8 @@ app
   .use(cookieParser());
 
 app.get('/login', (req, res) => {
-  const state = generateRandomString(16);
-  res.cookie(stateKey, state);
+  const state = generateRandomString(16); // generate a random value for cookie
+  res.cookie(stateKey, state); // stateKey = cookie name & state = cookie value
 
   // your application requests authorization
   const scope = 'user-read-private user-read-email';
@@ -63,7 +63,7 @@ app.get('/callback', (req, res) => {
         grant_type: 'authorization_code',
       },
       headers: {
-        Authorization: `Basic ${new Buffer(`${clientId}:${clientSecret}`).toString('base64')}`,
+        Authorization: `Basic ${Buffer.from(`${clientId}:${clientSecret}`).toString('base64')}`,
       },
       json: true,
     };
@@ -102,7 +102,7 @@ app.get('/refresh_token', (req, res) => {
     url: 'https://accounts.spotify.com/api/token',
     headers: {
       // need to convert newBuffer to Buffer.from()...
-      Authorization: `Basic ${new Buffer(`${clientId}:${clientSecret}`).toString('base64')}`,
+      Authorization: `Basic ${Buffer.from(`${clientId}:${clientSecret}`).toString('base64')}`,
     },
     form: {
       grant_type: 'refresh_token',
