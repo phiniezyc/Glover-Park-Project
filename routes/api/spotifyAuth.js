@@ -78,7 +78,7 @@ router.get('/callback', (req, res) => {
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect(`http://localhost:3000/#${querystring.stringify({ access_token, refresh_token })}`); // How we redirect to new page once hit spotify API, access tokens are pass in query string on client--don't use both methods!
+        res.redirect(`http://localhost:3000/spotifyLoggedIn/#${querystring.stringify({ access_token, refresh_token })}`); // How we redirect to new page once hit spotify API, access tokens are pass in query string on client--don't use both methods!
         // res.send('success!');
       } else {
         res.redirect(`/#${querystring.stringify({ error: 'invalid_token' })}`);
