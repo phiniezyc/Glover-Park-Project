@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-const router = require('express').Router(); // Express web server framework
+const router = require('express').Router(); 
 const request = require('request'); // "Request" library
 const querystring = require('querystring');
 
