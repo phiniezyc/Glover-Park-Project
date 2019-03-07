@@ -12,7 +12,7 @@ const routes = require('./routes');
 
 app
   .use(helmet())
-  .use(morgan)
+  .use(morgan('tiny'))
   .use(express.static(`${__dirname}/public`))
   .use(cors())
   .use(cookieParser());
