@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
-const router = require('express').Router(); 
+const router = require('express').Router();
+
 const request = require('request'); // "Request" library
 const querystring = require('querystring');
 
