@@ -49,7 +49,7 @@ router.get('/callback', (req, res) => {
   if (state === null || state !== storedState) {
     res.redirect(`/#${querystring.stringify({ error: 'state_mismatch' })}`);
   } else {
-    res.clearCookie(stateKey);
+    res.clearCookie(stateKey); // clears cookie after using to get auth token
     const authOptions = {
       url: 'https://accounts.spotify.com/api/token',
       form: {
@@ -66,8 +66,6 @@ router.get('/callback', (req, res) => {
     request.post(authOptions, (error, response, body) => {
       if (!error && response.statusCode === 200) {
         const { access_token, refresh_token } = body;
-
-
         const options = {
           url: 'https://api.spotify.com/v1/me',
           headers: {
@@ -80,7 +78,6 @@ router.get('/callback', (req, res) => {
         request.get(options, (error, response, body) => {
           console.log(body);// this is how we get the response on server side
         });
-
         // we can also pass the token to the browser to make requests from there
         res.redirect(`http://localhost:3000/spotifyLoggedIn/#${querystring.stringify({ access_token, refresh_token })}`); // How we redirect to new page once hit spotify API, access tokens are pass in query string on client--don't use both methods!
         // res.send('success!');
