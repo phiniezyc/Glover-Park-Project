@@ -6,6 +6,8 @@ class spotifyLoggedIn extends Component {
     console.log(params);
   }
 
+// TODO: refactor and add this to utility library function
+
   getHashParams() {
     const hashParams = {};
     let e, r = /([^&;=]+)=?([^&;]*)/g,
