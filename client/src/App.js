@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import IndexPage from './pages/index.js';
 import SpotifyLoggedIn from './pages/spotifyLoggedIn';
 
