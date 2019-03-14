@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// FIXME: probably best to not use this library doesn't seem to be updated!
 
 import SpotifyWebApi from 'spotify-web-api-js';
 const spotifyApi = new SpotifyWebApi();
@@ -10,7 +11,7 @@ class spotifyLoggedIn extends Component {
     console.log(params);
   }
 
-// TODO: refactor & add this to utility library function on client
+//TODO: refactor & add this to utility library function on client
   getHashParams() {
     const hashParams = {};
     let e, r = /([^&;=]+)=?([^&;]*)/g,
