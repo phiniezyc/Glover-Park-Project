@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+
+
+import SpotifyWebApi from 'spotify-web-api-js';
+const spotifyApi = new SpotifyWebApi();
 class spotifyLoggedIn extends Component {
   constructor() {
     super();
