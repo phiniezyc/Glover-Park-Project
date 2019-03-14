@@ -2,6 +2,7 @@ dependencies:
   react: 16.8.2
   react-dom: 16.8.2
   react-scripts: 2.1.5
+  spotify-web-api-js: 1.2.0
 packages:
   /@babel/code-frame/7.0.0:
     dependencies:
@@ -8968,6 +8969,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-NzNVhJDYpwceVVii8/Hu6DKfD2G+NrQHlS/V/qgv763EYudVwEcMQNxd2lh+0VrUByXN/oJkl5grOhYWvQUYiw==
+  /spotify-web-api-js/1.2.0:
+    dev: false
+    resolution:
+      integrity: sha512-S5Awpk/uDwbn5WQbZmnU3RG/Hi68yX6ElQy9ewUu+ZSWiswufp50Vfg7vvXPaRfflL5/p/SOaU2x1idNRrzADA==
   /sprintf-js/1.0.3:
     dev: false
     resolution:
@@ -10255,3 +10260,4 @@ specifiers:
   react: ^16.8.1
   react-dom: ^16.8.1
   react-scripts: 2.1.5
+  spotify-web-api-js: ^1.2.0
