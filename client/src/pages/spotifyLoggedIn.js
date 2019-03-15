@@ -24,6 +24,15 @@ class spotifyLoggedIn extends Component {
     return hashParams;
   }
 
+  //TODO: Add code for getUserPlaylists()...
+  getUserPlaylists() {
+    // Perform Get requests https://api.spotify.com/v1/me/playlists
+    //fetch()
+    // headers: {
+    //   Authorization: `Bearer ${access_token}`,
+    // },
+  }
+
   render() {
     return (
     <React.Fragment>
