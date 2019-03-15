@@ -8,6 +8,7 @@ class spotifyLoggedIn extends Component {
   constructor() {
     super();
     const params = this.getHashParams();
+    //FIXME: This needs to be removed but use to show tokens
     console.log(params);
   }
 
