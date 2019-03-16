@@ -28,7 +28,7 @@ class spotifyLoggedIn extends Component {
   //TODO: Add code for getUserPlaylists()...
   getUserPlaylists() {
     // Perform Get requests https://api.spotify.com/v1/me/playlists
-    //fetch()
+    fetch('https://api.spotify.com/v1/me/playlists').then(resp => resp.json()).then(results => {console.log(results)})
     // headers: {
     //   Authorization: `Bearer ${access_token}`,
     // },
