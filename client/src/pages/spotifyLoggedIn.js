@@ -8,6 +8,7 @@ class spotifyLoggedIn extends Component {
   constructor() {
     super();
     const params = this.getHashParams();
+    
     //FIXME: This needs to be removed but use to show tokens
     console.log(params);
   }
@@ -27,11 +28,21 @@ class spotifyLoggedIn extends Component {
 
   //TODO: Add code for getUserPlaylists()...
   getUserPlaylists() {
+    const options = {
+      method: "GET",
+      body: JSON.stringify(data),
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+        "Content-Type": "application/json"
+      },
+      credentials: "same-origin"
+    }
     // Perform Get requests https://api.spotify.com/v1/me/playlists
     fetch('https://api.spotify.com/v1/me/playlists').then(response => response.json()).then(console.log)
     // headers: {
     //   Authorization: `Bearer ${access_token}`,
     // },
+
   }
 
   render() {
