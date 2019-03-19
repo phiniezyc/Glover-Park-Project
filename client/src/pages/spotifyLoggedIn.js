@@ -8,7 +8,8 @@ class spotifyLoggedIn extends Component {
   constructor() {
     super();
     const params = this.getHashParams();
-    
+    const access_token = params.access_token;
+
     //FIXME: This needs to be removed but use to show tokens
     console.log(params);
   }
@@ -32,7 +33,7 @@ class spotifyLoggedIn extends Component {
       method: "GET",
       body: JSON.stringify(data),
       headers: {
-        Authorization: `Bearer ${access_token}`,
+        Authorization: `Bearer ${this.access_token}`,
         "Content-Type": "application/json"
       },
       credentials: "same-origin"
