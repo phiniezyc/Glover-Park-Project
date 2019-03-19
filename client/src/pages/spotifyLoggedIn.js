@@ -11,7 +11,7 @@ class spotifyLoggedIn extends Component {
     const access_token = params.access_token;
 
     //FIXME: This needs to be removed but use to show tokens
-    console.log(params);
+    console.log("parameters", params);
   }
 
 //TODO: refactor & add this to utility library function on client
@@ -35,7 +35,7 @@ class spotifyLoggedIn extends Component {
         Authorization: `Bearer ${this.access_token}`,
         "Content-Type": "application/json"
       },
-      credentials: "same-origin"
+      // credentials: "same-origin"
     }
     // Perform Get requests https://api.spotify.com/v1/me/playlists
     fetch('https://api.spotify.com/v1/me/playlists',options).then(response => response.json()).then(console.log)
@@ -43,6 +43,10 @@ class spotifyLoggedIn extends Component {
     //   Authorization: `Bearer ${access_token}`,
     // },
 
+  }
+
+  componentDidMount() {
+    this.getUserPlaylists();
   }
 
   render() {
