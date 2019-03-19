@@ -31,7 +31,6 @@ class spotifyLoggedIn extends Component {
   getUserPlaylists() {
     const options = {
       method: "GET",
-      body: JSON.stringify(data),
       headers: {
         Authorization: `Bearer ${this.access_token}`,
         "Content-Type": "application/json"
