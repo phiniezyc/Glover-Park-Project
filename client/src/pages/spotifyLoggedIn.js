@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 
-// FIXME: probably best to not use this library doesn't seem to be updated!
-
-import SpotifyWebApi from 'spotify-web-api-js';
-const spotifyApi = new SpotifyWebApi();
 class spotifyLoggedIn extends Component {
   constructor() {
     super();
