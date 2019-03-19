@@ -38,7 +38,7 @@ class spotifyLoggedIn extends Component {
       credentials: "same-origin"
     }
     // Perform Get requests https://api.spotify.com/v1/me/playlists
-    fetch('https://api.spotify.com/v1/me/playlists').then(response => response.json()).then(console.log)
+    fetch('https://api.spotify.com/v1/me/playlists',options).then(response => response.json()).then(console.log)
     // headers: {
     //   Authorization: `Bearer ${access_token}`,
     // },
