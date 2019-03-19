@@ -8,7 +8,10 @@ class spotifyLoggedIn extends Component {
   constructor() {
     super();
     const params = this.getHashParams();
-    const access_token = params.access_token;
+
+    this.state = {
+      access_token: params.access_token,
+    }
 
     //FIXME: This needs to be removed but use to show tokens
     console.log("parameters", params);
@@ -32,13 +35,16 @@ class spotifyLoggedIn extends Component {
     const options = {
       method: "GET",
       headers: {
-        Authorization: `Bearer ${this.access_token}`,
+        Authorization: `Bearer ${this.state.access_token}`,
         "Content-Type": "application/json"
       },
       // credentials: "same-origin"
     }
     // Perform Get requests https://api.spotify.com/v1/me/playlists
     fetch('https://api.spotify.com/v1/me/playlists',options).then(response => response.json()).then(console.log)
+
+    //TODO: REMOVE ONCE WORKING
+    console.log("Access Token " ,this.state.access_token);
     // headers: {
     //   Authorization: `Bearer ${access_token}`,
     // },
