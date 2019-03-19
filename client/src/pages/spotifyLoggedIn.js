@@ -12,9 +12,6 @@ class spotifyLoggedIn extends Component {
     this.state = {
       access_token: params.access_token,
     }
-
-    //FIXME: This needs to be removed but use to show tokens
-    console.log("parameters", params);
   }
 
 //TODO: refactor & add this to utility library function on client
