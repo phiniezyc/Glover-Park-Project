@@ -34,13 +34,6 @@ class spotifyLoggedIn extends Component {
     }
     // Perform Get requests https://api.spotify.com/v1/me/playlists
     fetch('https://api.spotify.com/v1/me/playlists',options).then(response => response.json()).then(console.log)
-
-    //TODO: REMOVE ONCE WORKING
-    console.log("Access Token " ,this.state.access_token);
-    // headers: {
-    //   Authorization: `Bearer ${access_token}`,
-    // },
-
   }
 
   componentDidMount() {
