@@ -7,7 +7,7 @@ class spotifyLoggedIn extends Component {
 
     this.state = {
       access_token: params.access_token,
-      spotifyPlaylistsArr: []
+      spotifyPlaylists: []
     }
   }
 
@@ -25,7 +25,7 @@ class spotifyLoggedIn extends Component {
   }
 
   //TODO: REFACTOR (PERHAPS UTILITY FUNCTION)
-  getUserPlaylists() {
+  getUserPlaylists = () => {
     const options = {
       method: "GET",
       headers: {
@@ -34,11 +34,11 @@ class spotifyLoggedIn extends Component {
       },
     }
     fetch('https://api.spotify.com/v1/me/playlists',options)
-    .then(response => response.json()) // FIXME: redundant
-    .then(response => this.setState({
-      spotifyPlaylistsArr: response.json(),
+    .then(response=>response.json())
+    .then((spotifyPlaylists) => this.setState({
+      spotifyPlaylists,
     }))
-    .then(console.log)
+    .catch(error => console.log(error)); // FIXME: Don't want to log this
   }
 
   componentDidMount() {
@@ -50,6 +50,10 @@ class spotifyLoggedIn extends Component {
     <React.Fragment>
       <header>
         <h2>We got your spotify</h2>
+        { (this.state.spotifyPlaylists.items) ? <h2>{this.state.spotifyPlaylists.items.length}</h2>
+        : 0
+        }
+
       </header>
     </React.Fragment>
     )
