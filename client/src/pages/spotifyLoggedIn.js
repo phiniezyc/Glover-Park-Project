@@ -7,10 +7,11 @@ class spotifyLoggedIn extends Component {
 
     this.state = {
       access_token: params.access_token,
+      spotifyPlaylistsArr: []
     }
   }
 
-//TODO: refactor & add this to utility library function on client
+  // Grabs parameters from url and returns object with access/refresh tokens
   getHashParams() {
     const hashParams = {};
     let e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -23,7 +24,7 @@ class spotifyLoggedIn extends Component {
     return hashParams;
   }
 
-  //TODO: Add code for getUserPlaylists()...
+  //TODO: REFACTOR (PERHAPS UTILITY FUNCTION)
   getUserPlaylists() {
     const options = {
       method: "GET",
@@ -32,8 +33,12 @@ class spotifyLoggedIn extends Component {
         "Content-Type": "application/json"
       },
     }
-    // Perform Get requests https://api.spotify.com/v1/me/playlists
-    fetch('https://api.spotify.com/v1/me/playlists',options).then(response => response.json()).then(console.log)
+    fetch('https://api.spotify.com/v1/me/playlists',options)
+    .then(response => response.json()) // FIXME: redundant
+    .then(response => this.setState({
+      spotifyPlaylistsArr: response.json(),
+    }))
+    .then(console.log)
   }
 
   componentDidMount() {
