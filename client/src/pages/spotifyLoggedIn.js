@@ -38,7 +38,7 @@ class spotifyLoggedIn extends Component {
     .then((spotifyPlaylists) => this.setState({
       spotifyPlaylists,
     }))
-    .catch(error => console.log(error)); // FIXME: Don't want to log this
+    .catch(error => console.log(error)); // FIXME: Don't want to log this to users
   }
 
   componentDidMount() {
