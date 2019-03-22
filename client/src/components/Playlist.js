@@ -4,7 +4,7 @@ const Playlists = (props) => {
 
     return (
         <h2>
-
+            Playlist Component
         </h2>
     )
 }

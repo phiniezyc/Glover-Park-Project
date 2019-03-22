@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Playlist from '../components/Playlist.js'
 
 class spotifyLoggedIn extends Component {
   constructor() {
@@ -53,6 +54,7 @@ class spotifyLoggedIn extends Component {
         { (this.state.spotifyPlaylists.items) ? <h2>{this.state.spotifyPlaylists.items.length}</h2>
         : 0
         }
+        <Playlist />
 
       </header>
     </React.Fragment>
