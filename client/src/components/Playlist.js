@@ -1,11 +1,10 @@
 import React from 'react';
 
-const Playlists = (props) => {
+const Playlists = () => {
+
 
     return (
-        <h2>
-            Playlist Component
-        </h2>
+        <h3>SpotiyPlaylist {}</h3>
     )
 }
 

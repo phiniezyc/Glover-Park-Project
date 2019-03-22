@@ -54,7 +54,15 @@ class spotifyLoggedIn extends Component {
         { (this.state.spotifyPlaylists.items) ? <h2>{this.state.spotifyPlaylists.items.length}</h2>
         : 0
         }
-        <Playlist />
+
+        { (this.state.spotifyPlaylists.items) ? this.state.spotifyPlaylists.items.map(playlist => {
+          return (
+            <h4 key={playlist.id}>{playlist.name}</h4>
+          )
+        })
+        : 0
+        }
+
 
       </header>
     </React.Fragment>
