@@ -54,7 +54,7 @@ class spotifyLoggedIn extends Component {
         { (this.state.spotifyPlaylists.items) ? <h2>{this.state.spotifyPlaylists.items.length}</h2>
         : 0
         }
-
+        {//TODO: abstract this into a component}
         { (this.state.spotifyPlaylists.items) ? this.state.spotifyPlaylists.items.map(playlist => {
           return (
             <h4 key={playlist.id}>{playlist.name}</h4>
