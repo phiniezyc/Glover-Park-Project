@@ -11,7 +11,7 @@ class spotifyLoggedIn extends Component {
       spotifyPlaylists: []
     }
   }
-
+  // FIXME: USE REACT URL PARAMS INSTEAD OF GETHASH
   // Grabs parameters from url and returns object with access/refresh tokens
   getHashParams() {
     const hashParams = {};
