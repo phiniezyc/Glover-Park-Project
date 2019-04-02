@@ -5,3 +5,4 @@
 * React
 * Node.js
 * Express.js
+* Spotify Auth
