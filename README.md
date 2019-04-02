@@ -1,4 +1,4 @@
-# Glover-Park-Project is a spotify playlist project that aims to make playlist visualization and management easier
+# Glover-Park-Project aims to make Spotify playlist visualization and management easier
 
 ## Project uses
 
