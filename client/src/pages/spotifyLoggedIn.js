@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
+import Playlist from '../components/Playlist.js'
 
-// FIXME: probably best to not use this library doesn't seem to be updated!
-
-import SpotifyWebApi from 'spotify-web-api-js';
-const spotifyApi = new SpotifyWebApi();
 class spotifyLoggedIn extends Component {
   constructor() {
     super();
     const params = this.getHashParams();
-    console.log(params);
-  }
 
-//TODO: refactor & add this to utility library function on client
+    this.state = {
+      access_token: params.access_token,
+      spotifyPlaylists: []
+    }
+  }
+  // FIXME: USE REACT URL PARAMS INSTEAD OF GETHASH
+  // Grabs parameters from url and returns object with access/refresh tokens
   getHashParams() {
     const hashParams = {};
     let e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -24,11 +25,45 @@ class spotifyLoggedIn extends Component {
     return hashParams;
   }
 
+  //TODO: REFACTOR (PERHAPS UTILITY FUNCTION)
+  getUserPlaylists = () => {
+    const options = {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${this.state.access_token}`,
+        "Content-Type": "application/json"
+      },
+    }
+    fetch('https://api.spotify.com/v1/me/playlists',options)
+    .then(response=>response.json())
+    .then((spotifyPlaylists) => this.setState({
+      spotifyPlaylists,
+    }))
+    .catch(error => console.log(error)); // FIXME: Don't want to log this to users
+  }
+
+  componentDidMount() {
+    this.getUserPlaylists();
+  }
+
   render() {
     return (
     <React.Fragment>
       <header>
         <h2>We got your spotify</h2>
+        { (this.state.spotifyPlaylists.items) ? <h2>{this.state.spotifyPlaylists.items.length}</h2>
+        : 0
+        }
+
+        { (this.state.spotifyPlaylists.items) ? this.state.spotifyPlaylists.items.map(playlist => {
+          return (
+            <h4 key={playlist.id}>{playlist.name}</h4>
+          )
+        })
+        : 0
+        }
+
+
       </header>
     </React.Fragment>
     )
