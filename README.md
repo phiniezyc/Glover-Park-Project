@@ -6,7 +6,7 @@
 * Node.js
 * Express.js
 * Spotify Auth
-
+___
 Create .env at root level of project with your unique spotify credentials
 
 ```javascript
