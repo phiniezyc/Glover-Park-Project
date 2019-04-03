@@ -13,6 +13,7 @@ class spotifyLoggedIn extends Component {
   }
   // FIXME: USE REACT URL PARAMS INSTEAD OF GETHASH
   // Grabs parameters from url and returns object with access/refresh tokens
+  // TODO: npm module querystring to get params
   getHashParams() {
     const hashParams = {};
     let e, r = /([^&;=]+)=?([^&;]*)/g,
