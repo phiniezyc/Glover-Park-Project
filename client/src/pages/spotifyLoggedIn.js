@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Playlist from '../components/Playlist.js'
 
 class spotifyLoggedIn extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     const params = this.getHashParams();
 
     this.state = {

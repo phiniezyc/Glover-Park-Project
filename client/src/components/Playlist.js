@@ -1,8 +1,6 @@
 import React from 'react';
 
 const Playlists = () => {
-
-
     return (
         <h3>SpotiyPlaylist {}</h3>
     )
