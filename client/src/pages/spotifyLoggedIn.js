@@ -63,8 +63,6 @@ class spotifyLoggedIn extends Component {
         })
         : 0
         }
-
-
       </header>
     </React.Fragment>
     )
