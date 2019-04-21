@@ -1,0 +1,53 @@
+---
+  0 debug pnpm:scope: 
+    selected: 1
+    workspacePrefix: null
+  1 debug pnpm:package-json: 
+    initial: 
+      name: "Glover-Park-Project"
+      version: "1.0.0"
+      description: "## Project uses"
+      main: "server.js"
+      scripts: 
+        test: "echo \"Error: no test specified\" && exit 1"
+        start: "node server.js"
+      repository: 
+        type: "git"
+        url: "git+https://github.com/phiniezyc/Glover-Park-Project.git"
+      keywords: []
+      author: ""
+      license: "ISC"
+      bugs: 
+        url: "https://github.com/phiniezyc/Glover-Park-Project/issues"
+      homepage: "https://github.com/phiniezyc/Glover-Park-Project#readme"
+      dependencies: 
+        cookie-parser: "^1.4.4"
+        cors: "^2.8.5"
+        dotenv: "^6.2.0"
+        express: "^4.16.4"
+        helmet: "^3.15.1"
+        morgan: "^1.9.1"
+        querystring: "^0.2.0"
+        request: "^2.88.0"
+      devDependencies: 
+        nodemon: "^1.18.10"
+      gitHead: "097983ee3f1645d64cce41b4029dbc628f7f11fa"
+      readme: "# This project aims to make Spotify playlist visualization and management easier\n\n## Project uses\n\n* React\n* Node.js\n* Express.js\n* Spotify Auth\n___\nCreate .env at root level of project with your unique spotify credentials\n\n```javascript\n// Create spotify developer account and use those credentials\nCLIENT_ID=XXXX_YOUR_SPOTIFY_CLIENT_ID_XXXX\n\nCLIENT_SECRET=XXXX_YOUR_SPOTIFY_CLIENT_SECRET_XXXX\n\n// Set Redirect URI in your spotify account. Change to match this exact URI\nREDIRECT_URI=http://localhost:3001/api/spotify/callback\n```\n"
+      readmeFilename: "README.md"
+      _id: "Glover-Park-Project@1.0.0"
+    prefix: "/Users/Chance/Code/Projects/Glover-Park-Project"
+  2 warn pnpm: 
+    message: "Moving nodemon that was installed by a different package manager to \"node_modules/.ignored"
+    prefix: "/Users/Chance/Code/Projects/Glover-Park-Project"
+  3 error pnpm: 
+    message: 
+      errno: -66
+      code: "ENOTEMPTY"
+      syscall: "rename"
+      path: "/Users/Chance/Code/Projects/Glover-Park-Project/node_modules/nodemon"
+      dest: "/Users/Chance/Code/Projects/Glover-Park-Project/node_modules/.ignored/nodemon"
+    err: 
+      name: "Error"
+      message: "ENOTEMPTY: directory not empty, rename '/Users/Chance/Code/Projects/Glover-Park-Project/node_modules/nodemon' -> '/Users/Chance/Code/Projects/Glover-Park-Project/node_modules/.ignored/nodemon'"
+      code: "ENOTEMPTY"
+      stack: "Error: ENOTEMPTY: directory not empty, rename '/Users/Chance/Code/Projects/Glover-Park-Project/node_modules/nodemon' -> '/Users/Chance/Code/Projects/Glover-Park-Project/node_modules/.ignored/nodemon'"
