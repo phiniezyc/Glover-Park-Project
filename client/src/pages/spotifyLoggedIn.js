@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import Playlist from '../components/Playlist.js';
 
+//FIXME: don't need the regex in new JS
+// Assuming "?post=1234&action=edit"
+// var urlParams = new URLSearchParams(window.location.search);
+// console.log(urlParams.has('post')); // true
+// console.log(urlParams.get('action')); // "edit"
+// console.log(urlParams.getAll('action')); // ["edit"]
+// console.log(urlParams.toString()); // "?post=1234&action=edit"
+// console.log(urlParams.append('active', '1')); // "?post=1234&action=edit&active=1"
+
 class spotifyLoggedIn extends Component {
   constructor(props) {
     super(props);
