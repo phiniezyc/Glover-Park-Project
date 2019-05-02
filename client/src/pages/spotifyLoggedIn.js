@@ -60,14 +60,14 @@ class spotifyLoggedIn extends Component {
   }
 
   render() {
-    
+    const statePlaylists = this.state.spotifyPlaylists.items
     return (
       <React.Fragment>
           <header>
-            <h2>We got your spotify</h2>
+            <h2>Here Are Your Spotify Playlists:</h2>
           </header>
 
-          <Playlist playlists={this.state.spotifyPlaylists.items} />
+          <Playlist playlists={statePlaylists} />
 
       </React.Fragment>
     );
