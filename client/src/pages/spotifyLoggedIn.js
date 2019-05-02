@@ -65,7 +65,7 @@ class spotifyLoggedIn extends Component {
           <header>
             <h2>We got your spotify</h2>
           </header>
-          <body>
+
             {this.state.spotifyPlaylists.items ? (
               <h2>{this.state.spotifyPlaylists.items.length}</h2>
             ) : (
@@ -77,7 +77,7 @@ class spotifyLoggedIn extends Component {
                   return <h4 key={playlist.id}>{playlist.name}</h4>;
                 })
               : 0}
-          </body>
+          
       </React.Fragment>
     );
   }
