@@ -17,7 +17,7 @@ class spotifyLoggedIn extends Component {
 
     this.state = {
       access_token: params.access_token,
-      spotifyPlaylists: []
+      spotifyPlaylists: [] 
     };
   }
   // FIXME: USE REACT URL PARAMS INSTEAD OF GETHASH
@@ -60,11 +60,16 @@ class spotifyLoggedIn extends Component {
   }
 
   render() {
+    const playlists = this.state.spotifyPlaylists.items ? this.state.spotifyPlaylists.items.length : 0;
     return (
       <React.Fragment>
           <header>
             <h2>We got your spotify</h2>
           </header>
+
+
+
+          <Playlist playlists={playlists}/>
 
             {this.state.spotifyPlaylists.items ? (
               <h2>{this.state.spotifyPlaylists.items.length}</h2>
@@ -77,7 +82,9 @@ class spotifyLoggedIn extends Component {
                   return <h4 key={playlist.id}>{playlist.name}</h4>;
                 })
               : 0}
-          
+
+
+
       </React.Fragment>
     );
   }
