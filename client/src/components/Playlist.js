@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Playlists = (props) => {
-    {//FIXME: Need to remove this styling.  Only for quick dev}
+    //FIXME: Need to remove this styling.  Only for quick dev;
     const divStyle = {
         color: 'blue',
         height: 200,
@@ -25,4 +25,3 @@ const Playlists = (props) => {
 }
 
 export default Playlists;
-
