@@ -15,7 +15,9 @@ const Playlists = (props) => {
              <div style={divStyle}>
                 <h4  key={playlist.id}>Playlist: </h4>
                 {playlist.name}
-                <h4>{playlist.owner.display_name}</h4>
+                <h4>Owner:</h4>
+                {playlist.owner.display_name}
+                <br></br>
                 <img src={playlist.images[0].url}/>
             </div>
             )
