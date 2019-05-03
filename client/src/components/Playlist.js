@@ -4,8 +4,8 @@ const Playlists = (props) => {
     //FIXME: Need to remove this styling.  Only for quick dev;
     const divStyle = {
         color: 'blue',
-        height: 200,
-        width: 200,
+        minHeight: 200,
+        minWidth: 200,
         display: 'block',
         border: '2px solid green',
         margin: 10,
@@ -21,7 +21,9 @@ const Playlists = (props) => {
 
 
     return (
+        <React.Fragment>
         {playlists}
+        </React.Fragment>
     )
 }
 
