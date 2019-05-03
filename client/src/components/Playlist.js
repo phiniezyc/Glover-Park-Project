@@ -13,7 +13,8 @@ const Playlists = (props) => {
     const playlists = props.playlists ? props.playlists.map(playlist =>{
          return (
              <div style={divStyle}>
-                <h4  key={playlist.id}>{playlist.name}</h4>
+                <h4  key={playlist.id}>Playlist: </h4>
+                {playlist.name}
                 <h4>{playlist.owner.display_name}</h4>
                 <img src={playlist.images[0].url}/>
             </div>
