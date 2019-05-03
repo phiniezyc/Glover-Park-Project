@@ -11,7 +11,12 @@ const Playlists = (props) => {
         margin: 10,
         };
     const playlists = props.playlists ? props.playlists.map(playlist =>{
-         return <h4 style={divStyle} key={playlist.id}>{playlist.name}</h4>
+         return (
+             <div style={divStyle}>
+                <h4  key={playlist.id}>{playlist.name}</h4>
+                <img src={playlist.images[0].url}/>
+            </div>
+            )
          }) : "Loading...";
 
 
