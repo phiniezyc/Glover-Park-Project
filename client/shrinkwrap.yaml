@@ -2,6 +2,8 @@ dependencies:
   react: 16.8.2
   react-dom: 16.8.2
   react-scripts: 3.0.0
+devDependencies:
+  eslint-config-react-app: 4.0.0
 packages:
   /@babel/code-frame/7.0.0:
     dependencies:
@@ -2644,7 +2646,6 @@ packages:
     resolution:
       integrity: sha512-27HBghJxjiZtIk3Ycvn/4kbJk/1uZuJFfuPEns6LaEvpvG1f0hTea8lilrouyo9mVc2GWdcEZ8OLoGmSADlrCw==
   /confusing-browser-globals/1.0.7:
-    dev: false
     resolution:
       integrity: sha512-cgHI1azax5ATrZ8rJ+ODDML9Fvu67PimB6aNxBrc/QwSaDaM9eTfIEUHx3bBLJJ82ioSb+/5zfsMCCEJax3ByQ==
   /connect-history-api-fallback/1.6.0:
@@ -3491,6 +3492,22 @@ packages:
       source-map: 0.6.1
     resolution:
       integrity: sha512-JwiqFD9KdGVVpeuRa68yU3zZnBEOcPs0nKW7wZzXky8Z7tffdYUHbe11bPCV5jYlK6DVdKLWLm0f5I/QlL0Kmw==
+  /eslint-config-react-app/4.0.0:
+    dependencies:
+      confusing-browser-globals: 1.0.7
+    dev: true
+    peerDependencies:
+      '@typescript-eslint/eslint-plugin': 1.x
+      '@typescript-eslint/parser': 1.x
+      babel-eslint: 10.x
+      eslint: 5.x
+      eslint-plugin-flowtype: 2.x
+      eslint-plugin-import: 2.x
+      eslint-plugin-jsx-a11y: 6.x
+      eslint-plugin-react: 7.x
+      eslint-plugin-react-hooks: 1.x
+    resolution:
+      integrity: sha512-SeFxaI+0NAzWPFAI9AT+Vp9Xe2u5RCnn0JVEXkE338HgoPujc38Bc0upCJw4BWmavvIN/ODmE6EuzHoAEn3ozw==
   /eslint-config-react-app/4.0.0/db06948c06fd051f199c163884d37459:
     dependencies:
       '@typescript-eslint/eslint-plugin': /@typescript-eslint/eslint-plugin/1.6.0/eslint@5.16.0
@@ -10231,6 +10248,7 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  eslint-config-react-app: ^4.0.0
   react: ^16.8.1
   react-dom: ^16.8.1
   react-scripts: 3.0.0

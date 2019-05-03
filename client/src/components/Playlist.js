@@ -2,32 +2,42 @@ import React from 'react';
 
 const Playlists = (props) => {
     //FIXME: Need to remove this styling.  Only for quick dev;
-    const divStyle = {
+    const playlistDiv = {
         color: 'blue',
-        minHeight: 200,
-        minWidth: 200,
-        display: 'block',
+        minHeight: 300,
+        minWidth: 300,
+        display: 'flex',
         border: '2px solid green',
         margin: 10,
+        flex: 1,
         };
+
+    const imgStyle = {
+        width:200,
+        height:200
+    }
     const playlists = props.playlists ? props.playlists.map(playlist =>{
          return (
-             <div style={divStyle}>
+             <div style={playlistDiv}>
                 <h4  key={playlist.id}>Playlist: </h4>
                 {playlist.name}
                 <h4>Owner:</h4>
                 {playlist.owner.display_name}
                 <br></br>
-                <img src={playlist.images[0].url}/>
+                <img style={imgStyle} src={playlist.images[0].url} />
             </div>
             )
          }) : "Loading...";
 
-
+    const divStyle = {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center'
+    }
     return (
-        <React.Fragment>
+        <div style={divStyle}>
         {playlists}
-        </React.Fragment>
+        </div>
     )
 }
 
