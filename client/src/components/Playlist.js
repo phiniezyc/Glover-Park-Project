@@ -5,16 +5,18 @@ const Playlists = (props) => {
     const playlistDiv = {
         color: 'blue',
         minHeight: 300,
-        minWidth: 300,
+        width: '33%',
         display: 'flex',
         border: '2px solid green',
         margin: 10,
         flex: 1,
+        textAlign: 'center'
         };
 
     const imgStyle = {
         width:200,
-        height:200
+        height:200,
+        // display: 'block'
     }
     const playlists = props.playlists ? props.playlists.map(playlist =>{
          return (
