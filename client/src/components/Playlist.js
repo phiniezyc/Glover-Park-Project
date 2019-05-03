@@ -21,11 +21,7 @@ const Playlists = (props) => {
 
 
     return (
-        <div >
-            {playlists}
-        </div>
-
-
+        {playlists}
     )
 }
 
