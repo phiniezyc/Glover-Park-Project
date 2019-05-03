@@ -37,6 +37,7 @@ const Playlists = (props) => {
         justifyContent: 'center'
     }
     return (
+        // FIXME: CHANGE TO SEMANTIC HTML 5
         <div style={divStyle}>
         {playlists}
         </div>
