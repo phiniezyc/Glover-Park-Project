@@ -52,7 +52,7 @@ class spotifyLoggedIn extends Component {
           spotifyPlaylists
         })
       )
-      .catch(error => console.log(error)); // FIXME: Don't want to log this to users
+      .catch(error => console.log(error.message)); // FIXME: Don't want to log this to users
   };
 
   componentDidMount() {

@@ -18,8 +18,8 @@ const Playlists = props => {
     height: 200
     // display: 'block'
   };
-  const playlists = props.playlists
-    ? props.playlists.map(playlist => {
+  const playlists = props.playlists ?
+    props.playlists.map(playlist => {
         return (
           <div style={playlistDiv}>
             <h4 key={playlist.id}>Playlist: </h4>
@@ -31,6 +31,7 @@ const Playlists = props => {
           </div>
         );
      })
+
     : 'Loading...';
 
   const divStyle = {
@@ -38,6 +39,7 @@ const Playlists = props => {
     flexWrap: 'wrap',
     justifyContent: 'center'
   };
+  
   return (
     // FIXME: CHANGE TO SEMANTIC HTML 5
     <div style={divStyle}>{playlists}</div>
