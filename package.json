@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"(cd client && pnpm run start)\""
+    "devStart": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"(cd client && pnpm run start)\""
   },
   "repository": {
     "type": "git",
