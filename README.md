@@ -1,4 +1,4 @@
-# This project aims to make Spotify playlist visualization and management easier
+# Spotify MixTape App
 
 ## Project uses
 
