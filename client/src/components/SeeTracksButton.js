@@ -12,7 +12,8 @@ class SeeTracksButton extends Component {
   getUserTracks = (props) => {
     const access_token = sessionStorage.spotifyToken;
     // FIXME: Calls too soon, prop is not in before call (I think) ?
-    const playlist_id = props.playlistId;
+    const playlist_id = this.state.selectedPlaylistId;
+    // console.log(playlist_id)
 
     const options = {
       method: 'GET',
