@@ -9,11 +9,12 @@ class SeeTracks extends Component {
     const options = {
       method: 'GET',
       headers: {
+        // FIXME: Need to get Bearer token here...perhaps as a prop? Probably a good use of redux
         Authorization: `Bearer ${this.state.access_token}`,
         'Content-Type': 'application/json'
       }
     };
-    fetch('https://api.spotify.com/v1/me/playlists', options)
+    fetch('https://api.spotify.com/v1/playlists/{playlist_id}/tracks', options)
       .then(response => response.json())
       .then(spotifyPlaylists =>
         this.setState({
@@ -24,12 +25,18 @@ class SeeTracks extends Component {
   };
 
   componentDidMount() {
-    this.getUserTracks();
+    //this.getUserTracks();
   }
 
   render() {
+    const buttonDivStyle = {
+      display: 'block',
+    };
+
     return (
-      <button>See Songs</button>
+      <div style={buttonDivStyle}>
+      <button >See Songs</button>
+      </div>
       )
   }
 }

@@ -29,8 +29,12 @@ const Playlists = (props) => {
         {playlist.owner.display_name}
         <br />
         <img style={imgStyle} src={playlist.images[0].url} alt="PlayList Cover" />
+        
         <SeeTracks />
+
       </div>
+
+
     ))
     : 'Loading...';
 
