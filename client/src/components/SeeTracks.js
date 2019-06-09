@@ -30,7 +30,8 @@ class SeeTracks extends Component {
 
   render() {
     const buttonDivStyle = {
-      display: 'block',
+      flex: '100%',
+
     };
 
     return (

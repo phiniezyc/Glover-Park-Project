@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SeeTracks from './SeeTracks';
+import SeeTracks from './SeeTracks.js';
 
 const Playlists = (props) => {
   // FIXME: Need to remove this styling.  Only for quick dev;
@@ -29,12 +29,8 @@ const Playlists = (props) => {
         {playlist.owner.display_name}
         <br />
         <img style={imgStyle} src={playlist.images[0].url} alt="PlayList Cover" />
-        
         <SeeTracks />
-
       </div>
-
-
     ))
     : 'Loading...';
 

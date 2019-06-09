@@ -51,7 +51,7 @@ class spotifyLoggedIn extends Component {
         this.setState({
           spotifyPlaylists
         })
-      )
+      ).then(sessionStorage.setItem("spotifyToken",this.state.access_token))
       .catch(error => console.log(error.message)); // FIXME: Don't want to log this to users
   };
 
