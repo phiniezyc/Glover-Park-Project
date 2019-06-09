@@ -6,11 +6,12 @@ class SeeTracks extends Component {
   }
 
   getUserTracks = () => {
+    const access_token = sessionStorage.spotifyToken;
     const options = {
       method: 'GET',
       headers: {
         // FIXME: Need to get Bearer token here...perhaps as a prop? Probably a good use of redux
-        Authorization: `Bearer ${this.state.access_token}`,
+        Authorization: `Bearer ${access_token}`,
         'Content-Type': 'application/json'
       }
     };
@@ -25,7 +26,7 @@ class SeeTracks extends Component {
   };
 
   componentDidMount() {
-    //this.getUserTracks();
+    this.getUserTracks();
   }
 
   render() {
