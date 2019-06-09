@@ -26,7 +26,7 @@ const Playlists = (props) => {
         <h4>Owner:</h4>
         {playlist.owner.display_name}
         <br />
-        <img style={imgStyle} src={playlist.images[0].url} />
+        <img style={imgStyle} src={playlist.images[0].url} alt="PlayList Cover" />
       </div>
     ))
     : 'Loading...';
