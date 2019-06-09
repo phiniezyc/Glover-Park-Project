@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 class SeeTrackButton extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      selectedPlaylistId: props.playlistId
+    }
   }
 
   getUserTracks = (props) => {
@@ -31,7 +35,6 @@ class SeeTrackButton extends Component {
   render() {
     const buttonDivStyle = {
       flex: '100%',
-
     };
 
     return (
