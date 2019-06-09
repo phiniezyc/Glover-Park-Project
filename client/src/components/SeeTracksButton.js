@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class SeeTrackButton extends Component {
+class SeeTracksButton extends Component {
   constructor(props) {
     super(props);
 
@@ -45,4 +45,4 @@ class SeeTrackButton extends Component {
   }
 }
 
-export default SeeTrackButton;
+export default SeeTracksButton;
