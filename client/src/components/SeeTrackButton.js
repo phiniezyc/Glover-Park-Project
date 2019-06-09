@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 
-class SeeTracks extends Component {
-  constructor() {
-    super();
+class SeeTrackButton extends Component {
+  constructor(props) {
+    super(props);
   }
 
-  getUserTracks = () => {
+  getUserTracks = (props) => {
     const access_token = sessionStorage.spotifyToken;
+    // FIXME: Calls too soon, prop is not in before call (I think) ?
+    const playlist_id = props.playlistId;
+
     const options = {
       method: 'GET',
       headers: {
-        // FIXME: Need to get Bearer token here...perhaps as a prop? Probably a good use of redux
         Authorization: `Bearer ${access_token}`,
         'Content-Type': 'application/json'
       }
     };
+
     fetch('https://api.spotify.com/v1/playlists/{playlist_id}/tracks', options)
       .then(response => response.json())
       .then(spotifyPlaylists =>
@@ -25,10 +28,6 @@ class SeeTracks extends Component {
       .catch(error => console.log(error.message)); // FIXME: Don't want to log this to users
   };
 
-  componentDidMount() {
-    this.getUserTracks();
-  }
-
   render() {
     const buttonDivStyle = {
       flex: '100%',
@@ -37,10 +36,10 @@ class SeeTracks extends Component {
 
     return (
       <div style={buttonDivStyle}>
-      <button >See Songs</button>
+      <button onClick={this.getUserTracks}>See Songs</button>
       </div>
       )
   }
 }
 
-export default SeeTracks;
+export default SeeTrackButton;
