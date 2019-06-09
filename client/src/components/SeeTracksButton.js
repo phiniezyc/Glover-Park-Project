@@ -5,7 +5,8 @@ class SeeTracksButton extends Component {
     super(props);
 
     this.state = {
-      selectedPlaylistId: props.playlistId
+      selectedPlaylistId: props.playlistId,
+      playlistTracks: [],
     }
   }
 
@@ -23,11 +24,11 @@ class SeeTracksButton extends Component {
       }
     };
 
-    fetch('https://api.spotify.com/v1/playlists/{playlist_id}/tracks', options)
+    fetch(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks`, options)
       .then(response => response.json())
-      .then(spotifyPlaylists =>
+      .then(playlistTracks =>
         this.setState({
-          spotifyPlaylists
+          playlistTracks
         })
       )
       .catch(error => console.log(error.message)); // FIXME: Don't want to log this to users
