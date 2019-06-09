@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SeeTracks from './SeeTracks';
+
 const Playlists = (props) => {
   // FIXME: Need to remove this styling.  Only for quick dev;
   const playlistDiv = {
@@ -27,7 +29,7 @@ const Playlists = (props) => {
         {playlist.owner.display_name}
         <br />
         <img style={imgStyle} src={playlist.images[0].url} alt="PlayList Cover" />
-        <button>See Songs</button>
+        <SeeTracks />
       </div>
     ))
     : 'Loading...';
