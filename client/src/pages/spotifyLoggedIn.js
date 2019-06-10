@@ -52,7 +52,7 @@ class spotifyLoggedIn extends Component {
           spotifyPlaylists
         })
       ).then(sessionStorage.setItem("spotifyToken",this.state.access_token))
-      .catch(error => console.log(error.message)); // FIXME: Don't want to log this to users
+      .catch(error => console.log(error.message)); 
   };
 
   componentDidMount() {

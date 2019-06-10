@@ -10,11 +10,9 @@ class SeeTracksButton extends Component {
     }
   }
 
-  getUserTracks = (props) => {
+  getPlaylistTracks = (props) => {
     const access_token = sessionStorage.spotifyToken;
-    // FIXME: Calls too soon, prop is not in before call (I think) ?
     const playlist_id = this.state.selectedPlaylistId;
-    // console.log(playlist_id)
 
     const options = {
       method: 'GET',
@@ -29,9 +27,8 @@ class SeeTracksButton extends Component {
       .then(playlistTracks =>
         this.setState({
           playlistTracks
-        })
-      )
-      .catch(error => console.log(error.message)); // FIXME: Don't want to log this to users
+        }))
+      .catch(error => console.log(error.message)); 
   };
 
   render() {
@@ -41,7 +38,7 @@ class SeeTracksButton extends Component {
 
     return (
       <div style={buttonDivStyle}>
-      <button onClick={this.getUserTracks}>See Songs</button>
+      <button onClick={this.getPlaylistTracks}>See Songs</button>
       </div>
       )
   }
