@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Redirect } from 'react-router-dom';
 class SeeTracksButton extends Component {
   constructor(props) {
     super(props);
@@ -7,6 +7,7 @@ class SeeTracksButton extends Component {
     this.state = {
       selectedPlaylistId: props.playlistId,
       playlistTracks: [],
+      toIndividualPlaylistView: false,
     }
   }
 
@@ -21,21 +22,29 @@ class SeeTracksButton extends Component {
         'Content-Type': 'application/json'
       }
     };
-
     fetch(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks`, options)
       .then(response => response.json())
       .then(playlistTracks =>
         this.setState({
           playlistTracks
+        })).then(this.setState({
+          toIndividualPlaylistView: true
         }))
-      .catch(error => console.log(error.message)); 
+      .catch(error => console.log(error.message));
   };
 
+  goToIndividualPlaylistView = () => {
+    this.props.history.push('/individualPlaylist');
+}
+
   render() {
+    if (this.state.toIndividualPlaylistView === true) {
+       return <Redirect to='/individualPlaylist' />
+    }
+
     const buttonDivStyle = {
       flex: '100%',
     };
-
     return (
       <div style={buttonDivStyle}>
       <button onClick={this.getPlaylistTracks}>See Songs</button>
