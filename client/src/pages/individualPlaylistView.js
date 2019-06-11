@@ -1,12 +1,9 @@
 import React from 'react';
+import PlaylistTrackComponent from '../components/PlaylistTracksComponent';
 
+const individualPlaylistView = () => (
 
-import PlaylistTrackComponent from '../components/PlaylistTracksComponent.js';
+  <PlaylistTrackComponent />
 
-const individualPlaylistView = () => {
-
-  return <PlaylistTrackComponent />
-
-};
-
+);
 export default individualPlaylistView;

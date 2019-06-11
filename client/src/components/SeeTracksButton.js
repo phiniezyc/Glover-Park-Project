@@ -28,7 +28,7 @@ class SeeTracksButton extends Component {
         this.setState({
           playlistTracks
         })).then(this.setState({
-          toIndividualPlaylistView: true
+          toIndividualPlaylistView: true // FIXME: error occurs because this is asynchronous and before component mounts. Error on client
         }))
       .catch(error => console.log(error.message));
   };
