@@ -38,6 +38,7 @@ class SeeTracksButton extends Component {
 }
 
   render() {
+    // V4 of React-Router Redirect component instead of directly interacting w/ this.props.history
     if (this.state.toIndividualPlaylistView === true) {
        return <Redirect to='/individualPlaylist' />
     }
