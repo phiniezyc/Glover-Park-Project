@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SeeTracksButton from './SeeTracksButton.js';
+import SeeTracksButton from './SeeTracksButton';
 
 const Playlists = (props) => {
   // FIXME: Need to remove this styling.  Only for quick dev;

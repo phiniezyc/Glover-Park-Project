@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import React, { Component } from 'react';
+
+import PlaylistTracksDisplay from './PlaylistTracksDisplay';
+
 class SeeTracksButton extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       selectedPlaylistId: props.playlistId,
-      playlistTracks: [],
-      toIndividualPlaylistView: false,
-    }
+      playlistTracks: []
+    };
   }
 
-  getPlaylistTracks = (props) => {
+  getPlaylistTracks = props => {
     const access_token = sessionStorage.spotifyToken;
     const playlist_id = this.state.selectedPlaylistId;
 
@@ -27,30 +29,33 @@ class SeeTracksButton extends Component {
       .then(playlistTracks =>
         this.setState({
           playlistTracks
-        })).then(this.setState({
-          toIndividualPlaylistView: true // FIXME: error occurs because this is asynchronous and before component mounts. Error on client
-        }))
+        })
+      )
       .catch(error => console.log(error.message));
   };
 
   goToIndividualPlaylistView = () => {
     this.props.history.push('/individualPlaylist');
-}
+  };
 
   render() {
     // V4 of React-Router Redirect component instead of directly interacting w/ this.props.history
-    if (this.state.toIndividualPlaylistView === true) {
-       return <Redirect to='/individualPlaylist' />
+    if (this.state.playlistTracks > 0) { // FIXME: PROBABLY DELETE THIS
+      return <Redirect to="/individualPlaylist" />;
     }
 
     const buttonDivStyle = {
-      flex: '100%',
+      flex: '100%'
     };
     return (
-      <div style={buttonDivStyle}>
-      <button onClick={this.getPlaylistTracks}>See Songs</button>
-      </div>
-      )
+      <React.Fragment>
+        <PlaylistTracksDisplay />
+
+        <div style={buttonDivStyle}>
+          <button onClick={this.getPlaylistTracks}>See Songs</button>
+        </div>
+      </React.Fragment>
+    );
   }
 }
 

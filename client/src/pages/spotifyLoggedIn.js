@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Playlist from '../components/Playlist.js';
+import Playlists from '../components/Playlist';
 
 //FIXME: don't need the regex in new JS
 // Assuming "?post=1234&action=edit"
@@ -17,7 +18,8 @@ class spotifyLoggedIn extends Component {
 
     this.state = {
       access_token: params.access_token,
-      spotifyPlaylists: []
+      spotifyPlaylists: [],
+      errorMessage: '',
     };
   }
   // FIXME: USE REACT URL PARAMS INSTEAD OF GETHASH
@@ -52,22 +54,26 @@ class spotifyLoggedIn extends Component {
           spotifyPlaylists
         })
       ).then(sessionStorage.setItem("spotifyToken",this.state.access_token))
-      .catch(error => console.log(error.message));
+      .catch(error => this.setState({ errorMessage: error.message }));
   };
 
   componentDidMount() {
     this.getUserPlaylists();
   }
-
+  // TODO: USE REDUX AS A CENTRAL STORE THEN PUT THE TRACK DISPLAY LARGE COMPONENT BENEATH PLAYLIST COMPONENT AND THEN USE CSS TO DISPLAY TO RIGHT
   render() {
     const statePlaylists = this.state.spotifyPlaylists.items;
     return (
       <React.Fragment>
+        Error: {this.state.errorMessage}
         <header>
           <h2>Here Are Your Spotify Playlists:</h2>
         </header>
 
         <Playlist playlists={statePlaylists} />
+
+        <SelectedPlaylistsTracksSection />
+
       </React.Fragment>
     );
   }
