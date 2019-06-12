@@ -2,7 +2,7 @@ import React from 'react';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import IndexPage from './pages/index';
-import spotifyLoggedIn from './pages/spotifyLoggedIn';
+import { spotifyLoggedIn } from './pages/spotifyLoggedIn';
 
 import './App.css';
 

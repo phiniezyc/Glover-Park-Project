@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Playlist from '../components/Playlist.js';
-import Playlists from '../components/Playlist';
+import Playlist from '../components/Playlist';
+
 
 //FIXME: don't need the regex in new JS
 // Assuming "?post=1234&action=edit"
@@ -61,10 +61,11 @@ class spotifyLoggedIn extends Component {
   componentDidMount() {
     this.getUserPlaylists();
   }
+
   // TODO: USE REDUX AS A CENTRAL STORE THEN PUT THE TRACK DISPLAY LARGE COMPONENT BENEATH PLAYLIST COMPONENT AND THEN USE CSS TO DISPLAY TO RIGHT
   render() {
     const statePlaylists = this.state.spotifyPlaylists.items;
-    if (this.state.errorMessage) {
+    if (this.state.errorMessage) {  // FIXME: Remove this logic from render and make a function that returns based on the conditional logic to clean up
       return <h3> Error: {this.state.errorMessage} </h3>;
     }
 
