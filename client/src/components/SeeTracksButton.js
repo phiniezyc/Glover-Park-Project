@@ -40,7 +40,8 @@ class SeeTracksButton extends Component {
 
   render() {
     // V4 of React-Router Redirect component instead of directly interacting w/ this.props.history
-    if (this.state.playlistTracks > 0) { // FIXME: PROBABLY DELETE THIS
+    if (this.state.playlistTracks > 0) {
+      // FIXME: PROBABLY DELETE THIS
       return <Redirect to="/individualPlaylist" />;
     }
 
