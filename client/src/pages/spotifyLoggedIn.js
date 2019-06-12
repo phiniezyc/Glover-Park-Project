@@ -19,7 +19,7 @@ class spotifyLoggedIn extends Component {
     this.state = {
       access_token: params.access_token,
       spotifyPlaylists: [],
-      errorMessage: '',
+      errorMessage: ''
     };
   }
   // FIXME: USE REACT URL PARAMS INSTEAD OF GETHASH
@@ -53,7 +53,8 @@ class spotifyLoggedIn extends Component {
         this.setState({
           spotifyPlaylists
         })
-      ).then(sessionStorage.setItem("spotifyToken",this.state.access_token))
+      )
+      .then(sessionStorage.setItem('spotifyToken', this.state.access_token))
       .catch(error => this.setState({ errorMessage: error.message }));
   };
 
@@ -63,9 +64,12 @@ class spotifyLoggedIn extends Component {
   // TODO: USE REDUX AS A CENTRAL STORE THEN PUT THE TRACK DISPLAY LARGE COMPONENT BENEATH PLAYLIST COMPONENT AND THEN USE CSS TO DISPLAY TO RIGHT
   render() {
     const statePlaylists = this.state.spotifyPlaylists.items;
+    if (this.state.errorMessage) {
+      return <h3> Error: {this.state.errorMessage} </h3>;
+    }
+
     return (
       <React.Fragment>
-        Error: {this.state.errorMessage}
         <header>
           <h2>Here Are Your Spotify Playlists:</h2>
         </header>
@@ -73,7 +77,6 @@ class spotifyLoggedIn extends Component {
         <Playlist playlists={statePlaylists} />
 
         <SelectedPlaylistsTracksSection />
-
       </React.Fragment>
     );
   }
