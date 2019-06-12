@@ -34,16 +34,12 @@ class SeeTracksButton extends Component {
       .catch(error => console.log(error.message));
   };
 
-  goToIndividualPlaylistView = () => {
-    this.props.history.push('/individualPlaylist');
-  };
-
   render() {
     // V4 of React-Router Redirect component instead of directly interacting w/ this.props.history
-    if (this.state.playlistTracks > 0) {
-      // FIXME: PROBABLY DELETE THIS
-      return <Redirect to="/individualPlaylist" />;
-    }
+    // if (this.state.playlistTracks > 0) {
+    //   // FIXME: PROBABLY DELETE THIS
+    //   return <Redirect to="/individualPlaylist" />;
+    // }
 
     const buttonDivStyle = {
       flex: '100%'
