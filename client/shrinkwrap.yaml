@@ -1,6 +1,7 @@
 dependencies:
   react: 16.8.6
   react-dom: 16.8.6
+  react-redux: 7.1.0
   react-router-dom: 5.0.0
   react-scripts: 3.0.0
 devDependencies:
@@ -8906,6 +8907,20 @@ packages:
   /react-is/16.8.6:
     resolution:
       integrity: sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
+  /react-redux/7.1.0:
+    dependencies:
+      '@babel/runtime': 7.4.5
+      hoist-non-react-statics: 3.3.0
+      invariant: 2.2.4
+      loose-envify: 1.4.0
+      prop-types: 15.7.2
+      react-is: 16.8.6
+    dev: false
+    peerDependencies:
+      react: ^16.8.3
+      redux: ^2.0.0 || ^3.0.0 || ^4.0.0-0
+    resolution:
+      integrity: sha512-hyu/PoFK3vZgdLTg9ozbt7WF3GgX5+Yn3pZm5/96/o4UueXA+zj08aiSC9Mfj2WtD1bvpIb3C5yvskzZySzzaw==
   /react-router-dom/5.0.0:
     dependencies:
       '@babel/runtime': 7.4.5
@@ -11142,7 +11157,8 @@ specifiers:
   eslint-plugin-import: ^2.17.2
   eslint-plugin-jsx-a11y: ^6.2.1
   eslint-plugin-react: ^7.13.0
-  react: ^16.8.1
+  react: ^16.8.6
   react-dom: ^16.8.1
+  react-redux: ^7.1.0
   react-router-dom: ^5.0.0
   react-scripts: 3.0.0
