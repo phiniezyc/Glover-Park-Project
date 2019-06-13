@@ -77,7 +77,7 @@ class spotifyLoggedIn extends Component {
 
         <Playlist playlists={statePlaylists} />
 
-        <SelectedPlaylistsTracksSection />
+
       </React.Fragment>
     );
   }
