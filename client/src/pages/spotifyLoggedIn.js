@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Playlist from '../components/Playlist';
 
+import PlaylistTracksDisplay from '../components/PlaylistTracksDisplay';
+
 
 //FIXME: don't need the regex in new JS
 // Assuming "?post=1234&action=edit"
@@ -68,16 +70,15 @@ class spotifyLoggedIn extends Component {
     if (this.state.errorMessage) {  // FIXME: Remove this logic from render and make a function that returns based on the conditional logic to clean up
       return <h3> Error: {this.state.errorMessage} </h3>;
     }
-
+    // TODO: RENDER PLAYLISTS AT CHILDREN OF PLAYLIST TRACKS DISPLAY
     return (
       <React.Fragment>
         <header>
           <h2>Here Are Your Spotify Playlists:</h2>
         </header>
+        <PlaylistTracksDisplay />
 
-        <Playlist playlists={statePlaylists} />
-
-
+          <Playlist playlists={statePlaylists} />
       </React.Fragment>
     );
   }

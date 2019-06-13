@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import PlaylistTracksDisplay from './PlaylistTracksDisplay';
+
 
 class SeeTracksButton extends Component {
   constructor(props) {
@@ -44,13 +44,13 @@ class SeeTracksButton extends Component {
       flex: '100%'
     };
     return (
-      <React.Fragment>
-        <PlaylistTracksDisplay />
+
 
         <div style={buttonDivStyle}>
+
           <button onClick={this.getPlaylistTracks}>See Songs</button>
         </div>
-      </React.Fragment>
+
     );
   }
 }
