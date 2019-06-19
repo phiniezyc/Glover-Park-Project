@@ -14,8 +14,6 @@ import { getPlaylistTracks } from './reducers/index';
 const mapStateToProps = state => ({ // state is undefined/empty right now
   // playlistTracks: state.getPlaylistTracks.playlistTracks,
 
-
-
 });
 
 const mapDispatchToProps = dispatch => ({
