@@ -3,7 +3,6 @@ import Playlist from '../components/Playlist';
 
 import PlaylistTracksDisplay from '../components/PlaylistTracksDisplay';
 
-
 //FIXME: don't need the regex in new JS
 // Assuming "?post=1234&action=edit"
 // var urlParams = new URLSearchParams(window.location.search);
@@ -67,7 +66,8 @@ class spotifyLoggedIn extends Component {
   // TODO: USE REDUX AS A CENTRAL STORE THEN PUT THE TRACK DISPLAY LARGE COMPONENT BENEATH PLAYLIST COMPONENT AND THEN USE CSS TO DISPLAY TO RIGHT
   render() {
     const statePlaylists = this.state.spotifyPlaylists.items;
-    if (this.state.errorMessage) {  // FIXME: Remove this logic from render and make a function that returns based on the conditional logic to clean up
+    if (this.state.errorMessage) {
+      // FIXME: Remove this logic from render and make a function that returns based on the conditional logic to clean up
       return <h3> Error: {this.state.errorMessage} </h3>;
     }
     // TODO: RENDER PLAYLISTS AT CHILDREN OF PLAYLIST TRACKS DISPLAY
@@ -76,9 +76,9 @@ class spotifyLoggedIn extends Component {
         <header>
           <h2>Here Are Your Spotify Playlists:</h2>
         </header>
-        <PlaylistTracksDisplay />
-
+        <PlaylistTracksDisplay>
           <Playlist playlists={statePlaylists} />
+        </PlaylistTracksDisplay>
       </React.Fragment>
     );
   }

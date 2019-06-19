@@ -1,7 +1,11 @@
 import React from 'react';
 
-const PlaylistTracksDisplay = () => (
-  <h1>yoooooo!</h1>
-);
+const PlaylistTracksDisplay = (props) => {
+  return (
+    <React.Fragment>
+      <div>{props.children}</div>
+    </React.Fragment>
+  );
+};
 
 export default PlaylistTracksDisplay;

@@ -4,6 +4,7 @@ dependencies:
   react-redux: 7.1.0
   react-router-dom: 5.0.0
   react-scripts: 3.0.0
+  redux: 4.0.1
 devDependencies:
   eslint-config-airbnb: 17.1.0
   eslint-config-react-app: 4.0.1
@@ -9107,6 +9108,13 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-nRCcW9Sj7NuZwa2XvH9co8NPeXUBhZP7CRKJtU+cS6PW9FpCIFoI5ib0NT1ZrbNuPoRy0ylyCaUL8Gih4LSyFg==
+  /redux/4.0.1:
+    dependencies:
+      loose-envify: 1.4.0
+      symbol-observable: 1.2.0
+    dev: false
+    resolution:
+      integrity: sha512-R7bAtSkk7nY6O/OYMVR9RiBI+XghjF9rlbl5806HJbQph0LJVHZrU5oaO4q70eUKiqMRqm4y07KLTlMZ2BlVmg==
   /regenerate-unicode-properties/8.1.0:
     dependencies:
       regenerate: 1.4.0
@@ -10100,6 +10108,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-rAfulcwp2D9jjdGu+0CuqlrAUin6bBWrpoqXWwKDZZZJfXcUXQSxLJOFJCQCSA0x0pP2U0TxSlJu2ROq5Bq6qA==
+  /symbol-observable/1.2.0:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
   /symbol-tree/3.2.2:
     dev: false
     resolution:
@@ -11162,3 +11176,4 @@ specifiers:
   react-redux: ^7.1.0
   react-router-dom: ^5.0.0
   react-scripts: 3.0.0
+  redux: ^4.0.1
