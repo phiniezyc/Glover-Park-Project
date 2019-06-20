@@ -12,7 +12,7 @@ import './App.css';
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunk)
+  applyMiddleware(thunk),
 );
 
 
