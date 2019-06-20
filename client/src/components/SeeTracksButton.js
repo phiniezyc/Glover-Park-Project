@@ -29,8 +29,7 @@ class SeeTracksButton extends Component {
       .then(playlistTracks =>
         this.setState({
           playlistTracks
-        })
-      )
+        }))
       .catch(error => console.log(error.message));
   };
 

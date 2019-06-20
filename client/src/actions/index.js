@@ -4,7 +4,7 @@ export function fetchPlaylistTracks() {
   const access_token = sessionStorage.spotifyToken;
 
   // TODO: GET SELECTED SONG
-  const playlist_id = null;
+  const playlist_id = '1QHyEjxmzvSq58Sk6V3KHa';
 
   // Instead of plain objects, we are returning function.
   return function (dispatch) {
@@ -38,6 +38,6 @@ export function fetchPlaylistTracks() {
             payload: body.tracks, // named tracks in tutorial but custom names "payload"
           });
         }
-      });
+      }).catch(error => console.log('fetch error, oh no!', error.message))
   };
 }
