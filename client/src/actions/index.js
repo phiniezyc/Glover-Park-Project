@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import { SET_PLAYLIST_TRACKS } from '../constants/constants';
 
-const getPlaylistTracks = (playlistId) => {
+const fetchPlaylistTracks = (playlistId) => {
   // eslint-disable-next-line camelcase
   const access_token = sessionStorage.spotifyToken;
   // eslint-disable-next-line camelcase
@@ -17,18 +17,16 @@ const getPlaylistTracks = (playlistId) => {
     },
   };
 
-  fetch(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks`, options)
+  const request = fetch(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks`, options)
     .then(response => response.json())
-    .then(playlistTracks =>
-      this.setState({
-        playlistTracks,
-      }))
     .catch(error => console.log(error.message));
+
+
+  return {
+    type: SET_PLAYLIST_TRACKS,
+    payload: request,
+  };
 };
 
-const setPlaylistTracks = tracks => ({
-  type: SET_PLAYLIST_TRACKS,
-  payload: tracks,
-});
 
-export default { setPlaylistTracks };
+export default { fetchPlaylistTracks };
