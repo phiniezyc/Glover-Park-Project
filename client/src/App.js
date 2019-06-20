@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { connect } from 'react-redux';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import IndexPage from './pages/index';
@@ -8,17 +7,6 @@ import spotifyLoggedIn from './pages/spotifyLoggedIn';
 
 import './App.css';
 
-import setPlaylistTracks from '../src/actions';
-import { getPlaylistTracks } from './reducers/index';
-
-const mapStateToProps = state => ({ // state is undefined/empty right now
-  // playlistTracks: state.getPlaylistTracks.playlistTracks,
-
-});
-
-const mapDispatchToProps = dispatch => ({
-  getPlaylistTracks: () => dispatch(setPlaylistTracks(getPlaylistTracks)),
-});
 
 const App = () => (
   <div className="App">
@@ -34,4 +22,4 @@ const App = () => (
 );
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
