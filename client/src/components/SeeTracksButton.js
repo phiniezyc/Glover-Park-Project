@@ -44,13 +44,9 @@ class SeeTracksButton extends Component {
       flex: '100%'
     };
     return (
-
-
         <div style={buttonDivStyle}>
-
           <button onClick={this.getPlaylistTracks}>See Songs</button>
         </div>
-
     );
   }
 }
