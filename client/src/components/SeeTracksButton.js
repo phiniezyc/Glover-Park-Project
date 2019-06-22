@@ -34,9 +34,8 @@ class SeeTracksButton extends Component {
   };
 
   render() {
-    console.log("Just for dev, remove:", this.props);
     // V4 of React-Router Redirect component instead of directly interacting w/ this.props.history
-    
+
     const buttonDivStyle = {
       flex: '100%'
     };
@@ -55,8 +54,6 @@ class SeeTracksButton extends Component {
 function mapStateToProps(state) {  // FIXME: send track idea by another parameter here? https://www.youtube.com/watch?v=SoOTQW4-tYk&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG&index=41
   // `state` variable contains whole redux state.
   return {
-    // I assume, you have `todos` state variable.
-    // Todos will be available in container component as `this.props.todos`
     playlistTracks: state.playlistTracks.tracks
   };
   }

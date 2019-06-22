@@ -12,6 +12,7 @@ devDependencies:
   eslint-plugin-import: 2.17.2
   eslint-plugin-jsx-a11y: 6.2.1
   eslint-plugin-react: 7.13.0
+  redux-devtools-extension: 2.13.8
 packages:
   /@babel/code-frame/7.0.0:
     dependencies:
@@ -9109,6 +9110,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-nRCcW9Sj7NuZwa2XvH9co8NPeXUBhZP7CRKJtU+cS6PW9FpCIFoI5ib0NT1ZrbNuPoRy0ylyCaUL8Gih4LSyFg==
+  /redux-devtools-extension/2.13.8:
+    dev: true
+    peerDependencies:
+      redux: ^3.1.0 || ^4.0.0
+    resolution:
+      integrity: sha512-8qlpooP2QqPtZHQZRhx3x3OP5skEV1py/zUdMY28WNAocbafxdG2tRD1MWE7sp8obGMNYuLWanhhQ7EQvT1FBg==
   /redux-thunk/2.3.0:
     dev: false
     resolution:
@@ -11182,4 +11189,5 @@ specifiers:
   react-router-dom: ^5.0.0
   react-scripts: 3.0.0
   redux: ^4.0.1
+  redux-devtools-extension: ^2.13.8
   redux-thunk: ^2.3.0

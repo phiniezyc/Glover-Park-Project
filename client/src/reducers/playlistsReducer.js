@@ -17,6 +17,7 @@ function playlistTracksReducer(state = INITIAL_STATE, action) {
       return Object.assign({}, state, {
         isFetching: false,
         tracks: action.tracks,
+        // tracks: [...state.tracks, ...action.tracks], = how to add to previous data
       });
     case 'FETCH_TRACKS_FAILURE':
       // Providing error message to state, to be able display it in UI.
