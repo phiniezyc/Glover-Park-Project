@@ -8,7 +8,7 @@ export function fetchPlaylistTracks() {
 
   // Instead of plain objects, we are returning function.
   // eslint-disable-next-line func-names
-  return function (dispatch) {
+  return (dispatch) => {
     dispatch({
       type: 'FETCH_TRACKS_REQUEST',
     });
@@ -24,7 +24,8 @@ export function fetchPlaylistTracks() {
     return fetch(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks`, options)
     // Here, we are getting json body(in our case it will contain `tracks` or `error` prop, depending on request was failed or not) from server response
     // And providing `response` and `body` variables to the next chain.
-      .then(response => response.json().then(body => ({ response, body })))
+      .then(response => response.json()
+        .then(body => ({ response, body })))
       .then(({ response, body }) => {
         if (!response.ok) {
         // If request was failed, dispatching FAILURE action.
@@ -33,12 +34,12 @@ export function fetchPlaylistTracks() {
             error: body.error,
           });
         } else {
-        // When everything is ok, dispatching SUCCESS action.
           dispatch({
             type: 'FETCH_TRACKS_SUCCESS',
-            payload: body.tracks, // named tracks in tutorial but custom names "payload"
+            tracks: body.items,
           });
         }
-      }).catch(error => console.log('fetch error, oh no!', error.message))
+      })
+      .catch(error => console.log('fetch error, oh no!', error.message));
   };
 }

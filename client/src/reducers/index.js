@@ -4,7 +4,7 @@ import { combineReducers } from 'redux';
 import PlayListTracksReducer from './playlistsReducer';
 
 const rootReducer = combineReducers({
-  tracks: PlayListTracksReducer,
+  playlistTracks: PlayListTracksReducer,
 });
 
 export default rootReducer;

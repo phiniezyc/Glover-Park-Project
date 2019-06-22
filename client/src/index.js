@@ -7,11 +7,15 @@ import thunk from 'redux-thunk';
 
 import * as serviceWorker from './serviceWorker';
 import App from './App';
-import reducers from './reducers';
+import rootReducer from './reducers/index';
+
 
 import './index.css';
 
-const store = createStore(reducers, applyMiddleware(thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk));
+
+// FIXME: my store
+// console.log("my store: ", store.getState())
 
 ReactDOM.render(<Provider store={store}><App /> </Provider>, document.getElementById('root'));
 

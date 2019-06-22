@@ -33,19 +33,10 @@ class SeeTracksButton extends Component {
       .catch(error => console.log(error.message));
   };
 
-  // FIXME: ONLY FOR TESTING! REMOVE WHEN WORKING PROPERLY
-  componentDidMount() {
-    // When container was mounted, we need to start fetching todos.
-    // this.props.fetchPlaylistTracks();
-  }
-
   render() {
+    console.log("Just for dev, remove:", this.props);
     // V4 of React-Router Redirect component instead of directly interacting w/ this.props.history
-    // if (this.state.playlistTracks > 0) {
-    //   // FIXME: PROBABLY DELETE THIS
-    //   return <Redirect to="/individualPlaylist" />;
-    // }
-
+    
     const buttonDivStyle = {
       flex: '100%'
     };
@@ -61,12 +52,12 @@ class SeeTracksButton extends Component {
 }
 
 // This function is used to convert redux global state to desired props.
-function mapStateToProps(state) {
+function mapStateToProps(state) {  // FIXME: send track idea by another parameter here? https://www.youtube.com/watch?v=SoOTQW4-tYk&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG&index=41
   // `state` variable contains whole redux state.
   return {
     // I assume, you have `todos` state variable.
     // Todos will be available in container component as `this.props.todos`
-    playlistTracks: state.tracks
+    playlistTracks: state.playlistTracks.tracks
   };
   }
 
@@ -74,7 +65,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     // This function will be available in component as `this.props.fetchTodos`
-    fetchPlaylistTracks: function() {
+    fetchPlaylistTracks: () => {
       dispatch(fetchPlaylistTracks());
     }
   };

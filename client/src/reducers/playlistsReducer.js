@@ -1,7 +1,6 @@
-import { combineReducers } from 'redux';
 
 const INITIAL_STATE = {
-  items: [],
+  tracks: [],
   isFetching: false,
   error: undefined,
 };
@@ -17,7 +16,7 @@ function playlistTracksReducer(state = INITIAL_STATE, action) {
       // Adding derived todos to state
       return Object.assign({}, state, {
         isFetching: false,
-        payload: action.tracks,
+        tracks: action.tracks,
       });
     case 'FETCH_TRACKS_FAILURE':
       // Providing error message to state, to be able display it in UI.
@@ -30,6 +29,4 @@ function playlistTracksReducer(state = INITIAL_STATE, action) {
   }
 }
 
-export default combineReducers({
-  tracks: playlistTracksReducer,
-});
+export default playlistTracksReducer;
