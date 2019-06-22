@@ -14,11 +14,16 @@ import rootReducer from './reducers/index';
 
 import './index.css';
 
-
+// wraps middleware because reduxDevtools only allows 2 arguments
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 
-ReactDOM.render(<Provider store={store}><App /> </Provider>, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root'),
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
