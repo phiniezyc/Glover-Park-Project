@@ -36,8 +36,7 @@ class SeeTracksButton extends Component {
   // FIXME: ONLY FOR TESTING! REMOVE WHEN WORKING PROPERLY
   componentDidMount() {
     // When container was mounted, we need to start fetching todos.
-    this.props.fetchPlaylistTracks();
-    this.props.fetchPlaylistTracks()
+    // this.props.fetchPlaylistTracks();
   }
 
   render() {
@@ -53,6 +52,9 @@ class SeeTracksButton extends Component {
     return (
         <div style={buttonDivStyle}>
           <button onClick={this.getPlaylistTracks}>See Songs</button>
+          {/* // FIXME: Need to get playlist id in, now hardcoded */}
+          <button onClick={this.props.fetchPlaylistTracks}>Redux Tracks</button>
+
         </div>
     );
   }

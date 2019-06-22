@@ -7,6 +7,7 @@ export function fetchPlaylistTracks() {
   const playlist_id = '1QHyEjxmzvSq58Sk6V3KHa';
 
   // Instead of plain objects, we are returning function.
+  // eslint-disable-next-line func-names
   return function (dispatch) {
     dispatch({
       type: 'FETCH_TRACKS_REQUEST',
