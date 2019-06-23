@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPlaylistTracks } from '../actions/index';
 
+// FIXME: Make a presentational component (functional) since using redux for state management.
 class SeeTracksButton extends Component {
   constructor(props) {
     super(props);

@@ -16,7 +16,7 @@ function playlistTracksReducer(state = INITIAL_STATE, action) {
       // Adding derived todos to state
       return Object.assign({}, state, {
         isFetching: false,
-        tracks: action.tracks, // FIXME:change to payload and change in index.js should be action.payload
+        tracks: action.payload,
         // tracks: [...state.tracks, ...action.tracks], = how to add to previous data
       });
     case 'FETCH_TRACKS_FAILURE':

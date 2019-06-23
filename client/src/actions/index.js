@@ -36,7 +36,7 @@ export function fetchPlaylistTracks() {
         } else {
           dispatch({
             type: 'FETCH_TRACKS_SUCCESS',
-            tracks: body.items,
+            payload: body.items,
           });
         }
       })
