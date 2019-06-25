@@ -13,6 +13,7 @@ devDependencies:
   eslint-plugin-jsx-a11y: 6.2.1
   eslint-plugin-react: 7.13.0
   redux-devtools-extension: 2.13.8
+  redux-logger: 3.0.6
 packages:
   /@babel/code-frame/7.0.0:
     dependencies:
@@ -3827,6 +3828,10 @@ packages:
       node: '>=0.10'
     resolution:
       integrity: sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
+  /deep-diff/0.3.8:
+    dev: true
+    resolution:
+      integrity: sha1-wB3mPvsO7JeYgB1Ax+Da4ltYLIQ=
   /deep-equal/1.0.1:
     dev: false
     resolution:
@@ -9116,6 +9121,12 @@ packages:
       redux: ^3.1.0 || ^4.0.0
     resolution:
       integrity: sha512-8qlpooP2QqPtZHQZRhx3x3OP5skEV1py/zUdMY28WNAocbafxdG2tRD1MWE7sp8obGMNYuLWanhhQ7EQvT1FBg==
+  /redux-logger/3.0.6:
+    dependencies:
+      deep-diff: 0.3.8
+    dev: true
+    resolution:
+      integrity: sha1-91VZZvMJjzyIYExEnPC69XeCdL8=
   /redux-thunk/2.3.0:
     dev: false
     resolution:
@@ -11190,4 +11201,5 @@ specifiers:
   react-scripts: 3.0.0
   redux: ^4.0.1
   redux-devtools-extension: ^2.13.8
+  redux-logger: ^3.0.6
   redux-thunk: ^2.3.0

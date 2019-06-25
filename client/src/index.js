@@ -7,6 +7,9 @@ import thunk from 'redux-thunk';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { composeWithDevTools } from 'redux-devtools-extension';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
+import logger from 'redux-logger';
+
 import * as serviceWorker from './serviceWorker';
 import App from './App';
 import rootReducer from './reducers/index';
@@ -15,7 +18,8 @@ import rootReducer from './reducers/index';
 import './index.css';
 
 // wraps middleware because reduxDevtools only allows 2 arguments
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk, logger)));
+// logger should always go last
 
 
 ReactDOM.render(
