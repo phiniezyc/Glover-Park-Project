@@ -22,8 +22,8 @@ const Playlists = (props) => {
   };
   const playlists = props.playlists
     ? props.playlists.map(playlist => (
-      <div style={playlistDiv}>
-        <h4 key={playlist.id}>Playlist: </h4>
+      <div key={playlist.id} style={playlistDiv}>
+        <h4>Playlist: </h4>
         {playlist.name}
         <h4>Owner:</h4>
         {playlist.owner.display_name}

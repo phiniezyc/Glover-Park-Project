@@ -2,7 +2,6 @@
 // eslint-disable-next-line import/prefer-default-export
 export function fetchPlaylistTracks(playlistId) {
   const access_token = sessionStorage.spotifyToken;
-
   const playlist_id = playlistId;
 
   // Instead of plain objects, we are returning function.
