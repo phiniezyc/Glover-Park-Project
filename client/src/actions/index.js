@@ -1,10 +1,10 @@
 /* eslint-disable camelcase */
 // eslint-disable-next-line import/prefer-default-export
-export function fetchPlaylistTracks() {
+export function fetchPlaylistTracks(playlistId) {
   const access_token = sessionStorage.spotifyToken;
 
   // TODO: GET SELECTED SONG
-  const playlist_id = '1QHyEjxmzvSq58Sk6V3KHa';
+  const playlist_id = playlistId;
 
   // Instead of plain objects, we are returning function.
   // eslint-disable-next-line func-names

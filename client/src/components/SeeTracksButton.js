@@ -45,7 +45,7 @@ class SeeTracksButton extends Component {
           <button onClick={this.getPlaylistTracks}>See Songs</button>
 
           {/* // FIXME: Need to get playlist id in, now hardcoded */}
-          <button onClick={this.props.fetchPlaylistTracks}>Redux Tracks</button>
+          <button onClick={() => this.props.fetchPlaylistTracks(this.state.playlistId)}>Redux Tracks</button>
           { // FIXME: REMOVE AFTER DEV
             (this.props.playlistTracks) ? <h2>{this.props.playlistTracks.length}</h2> : "loading"
           }
@@ -69,8 +69,8 @@ function mapStateToProps(state, ) {
 function mapDispatchToProps(dispatch) {
   return {
     // This function will be available in component as `this.props.fetchTodos`
-    fetchPlaylistTracks: () => {
-      dispatch(fetchPlaylistTracks());
+    fetchPlaylistTracks: (playlistId) => {
+      dispatch(fetchPlaylistTracks(playlistId));
     }
   };
 }
