@@ -17,10 +17,14 @@ import rootReducer from './reducers/index';
 
 import './index.css';
 
-// wraps middleware because reduxDevtools only allows 2 arguments
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk, logger)));
-// logger should always go last
+const middleware = [thunk];
 
+if (process.env.ENVIRONMENT !== 'production') {
+  middleware.push(logger); // logger should always go last
+}
+
+// wraps middleware because reduxDevtools only allows 2 arguments
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(...middleware)));
 
 ReactDOM.render(
   <Provider store={store}>
