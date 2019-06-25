@@ -9,14 +9,14 @@ class SeeTracksButton extends Component {
     super(props);
 
     this.state = {
-      selectedPlaylistId: props.playlistId,
+      playlistId: props.playlistId,
       playlistTracks: []
     };
   }
 
   getPlaylistTracks = () => {
     const access_token = sessionStorage.spotifyToken;
-    const playlist_id = this.state.selectedPlaylistId;
+    const playlist_id = this.state.playlistId;
 
     const options = {
       method: 'GET',
@@ -43,6 +43,7 @@ class SeeTracksButton extends Component {
     return (
         <div style={buttonDivStyle}>
           <button onClick={this.getPlaylistTracks}>See Songs</button>
+
           {/* // FIXME: Need to get playlist id in, now hardcoded */}
           <button onClick={this.props.fetchPlaylistTracks}>Redux Tracks</button>
           { // FIXME: REMOVE AFTER DEV
@@ -55,8 +56,10 @@ class SeeTracksButton extends Component {
 }
 
 // This function is used to convert redux global state to desired props.
-function mapStateToProps(state) {  // FIXME: send track idea by another parameter here? https://www.youtube.com/watch?v=SoOTQW4-tYk&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG&index=41
+function mapStateToProps(state, ) {
+  // console.log("yo", ownProps.playlistId);
   // `state` variable contains whole redux state.
+
   return {
     playlistTracks: state.playlistTracks.tracks
   };
