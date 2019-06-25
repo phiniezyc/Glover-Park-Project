@@ -8,7 +8,7 @@ class SeeTracksButton extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
+    this.state = { // FIXME: state is unnecessary since all in redux now
       playlistId: props.playlistId,
       playlistTracks: []
     };
@@ -45,7 +45,7 @@ class SeeTracksButton extends Component {
           <button onClick={this.getPlaylistTracks}>See Songs</button>
 
           {/* // FIXME: Need to get playlist id in, now hardcoded */}
-          <button onClick={() => this.props.fetchPlaylistTracks(this.state.playlistId)}>Redux Tracks</button>
+          <button onClick={() => this.props.fetchPlaylistTracks(this.props.playlistId)}>Redux Tracks</button>
           { // FIXME: REMOVE AFTER DEV
             (this.props.playlistTracks) ? <h2>{this.props.playlistTracks.length}</h2> : "loading"
           }

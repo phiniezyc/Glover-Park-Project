@@ -3,7 +3,6 @@
 export function fetchPlaylistTracks(playlistId) {
   const access_token = sessionStorage.spotifyToken;
 
-  // TODO: GET SELECTED SONG
   const playlist_id = playlistId;
 
   // Instead of plain objects, we are returning function.
