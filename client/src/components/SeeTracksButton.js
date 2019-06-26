@@ -11,8 +11,8 @@ const SeeTracksButton = (props) => {
     <div style={buttonDivStyle}>
       <button onClick={() => props.fetchPlaylistTracks(props.playlistId)}>Redux Tracks</button>
       { // FIXME: REMOVE AFTER DEV
-            (props.playlistTracks) ? <h2>{props.playlistTracks.length}</h2> : 'loading'
-          }
+        (props.playlistTracks) ? <h2>{props.playlistTracks.length}</h2> : 'loading'
+      }
     </div>
   );
 };
