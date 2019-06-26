@@ -1,19 +1,16 @@
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { composeWithDevTools } from 'redux-devtools-extension';
-
 // eslint-disable-next-line import/no-extraneous-dependencies
 import logger from 'redux-logger';
 
 import * as serviceWorker from './serviceWorker';
 import App from './App';
 import rootReducer from './reducers/index';
-
 
 import './index.css';
 

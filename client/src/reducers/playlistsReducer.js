@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 function playlistTracksReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case 'FETCH_TRACKS_REQUEST':
-      // This time, you may want to display loader in the UI.
+      // May want to display loader in UI.
       return Object.assign({}, state, {
         isFetching: true,
       });
@@ -20,7 +20,7 @@ function playlistTracksReducer(state = INITIAL_STATE, action) {
         // tracks: [...state.tracks, ...action.tracks], = how to add to previous data
       });
     case 'FETCH_TRACKS_FAILURE':
-      // Providing error message to state, to be able display it in UI.
+      // Providing error message to state, to display in UI.
       return Object.assign({}, state, {
         isFetching: false,
         error: action.error,

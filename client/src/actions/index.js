@@ -3,14 +3,11 @@
 export function fetchPlaylistTracks(playlistId) {
   const access_token = sessionStorage.spotifyToken;
   const playlist_id = playlistId;
-
-  // Instead of plain objects, we are returning function.
   // eslint-disable-next-line func-names
-  return (dispatch) => {
+  return (dispatch) => { // Instead of plain objects, we are returning function.
     dispatch({
       type: 'FETCH_TRACKS_REQUEST',
     });
-
 
     const options = {
       method: 'GET',
@@ -25,8 +22,7 @@ export function fetchPlaylistTracks(playlistId) {
       .then(response => response.json()
         .then(body => ({ response, body })))
       .then(({ response, body }) => {
-        if (!response.ok) {
-        // If request was failed, dispatching FAILURE action.
+        if (!response.ok) { // If request failed, dispatch FAILURE action.
           dispatch({
             type: 'FETCH_TRACKS_FAILURE',
             error: body.error,
