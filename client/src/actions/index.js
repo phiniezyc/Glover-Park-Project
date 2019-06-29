@@ -17,7 +17,8 @@ export function fetchPlaylistTracks(playlistId) {
       },
     };
     return fetch(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks`, options)
-    // Here, we are getting json body(in our case it will contain `tracks` or `error` prop, depending on request was failed or not) from server response
+    // Getting json body(will contain `tracks` or `error` prop,
+    // depending on request was failed or not) from server response
     // And providing `response` and `body` variables to the next chain.
       .then(response => response.json()
         .then(body => ({ response, body })))

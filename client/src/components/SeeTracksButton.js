@@ -7,6 +7,8 @@ const SeeTracksButton = (props) => {
   const buttonDivStyle = {
     flex: '100%',
   };
+
+
   return (
     <div style={buttonDivStyle} >
       <button onClick={() => props.fetchPlaylistTracks(props.playlistId)}>Redux Tracks</button>
