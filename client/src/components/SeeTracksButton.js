@@ -3,6 +3,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPlaylistTracks } from '../actions/index';
 
+import PlaylistTracksModal from './PlaylistTracksModal';
+
 const SeeTracksButton = (props) => {
   const buttonDivStyle = {
     flex: '100%',
@@ -15,6 +17,8 @@ const SeeTracksButton = (props) => {
       { // FIXME: REMOVE AFTER DEV
         (props.playlistTracks) ? <h2>{props.playlistTracks.length}</h2> : 'loading'
       }
+
+      <PlaylistTracksModal />
     </div>
   );
 };
