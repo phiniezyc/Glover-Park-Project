@@ -5,14 +5,26 @@ import ReactModal from 'react-modal';
 class PlaylistTracksModal extends Component {
   constructor() {
     super();
+    this.state = {
+      showModal: false
+    };
   }
 
+  handleCloseModal = () => {
+    this.setState({ showModal: false });
+  }
+  handleOpenModal = () => {
+    this.setState({ showModal: true });
+  }
 
+  componentDidMount() {
+     //this.handleOpenModal();
+  }
   render() {
   return (
     <Fragment>
-      <h1>yooooo</h1>
-      <ReactModal />
+      <button onClick={this.handleOpenModal}>Trigger Modal</button>
+      <ReactModal isOpen={this.state.showModal} onRequestClose={this.handleCloseModal}  shouldCloseOnOverlayClick={true} />
     </Fragment>
   )
   }
