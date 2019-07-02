@@ -3,8 +3,8 @@ import React, { Component, Fragment } from 'react';
 import ReactModal from 'react-modal';
 
 class PlaylistTracksModal extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       showModal: false
     };
@@ -24,7 +24,11 @@ class PlaylistTracksModal extends Component {
   return (
     <Fragment>
       <button onClick={this.handleOpenModal}>Trigger Modal</button>
-      <ReactModal isOpen={this.state.showModal} onRequestClose={this.handleCloseModal}  shouldCloseOnOverlayClick={true} />
+      <ReactModal isOpen={this.state.showModal} onRequestClose={this.handleCloseModal}  shouldCloseOnOverlayClick={true} >
+      <div>{5}</div>
+      </ReactModal>
+
+
     </Fragment>
   )
   }

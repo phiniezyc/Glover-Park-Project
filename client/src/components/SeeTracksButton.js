@@ -18,7 +18,7 @@ const SeeTracksButton = (props) => {
         (props.playlistTracks) ? <h2>{props.playlistTracks.length}</h2> : 'loading'
       }
 
-      <PlaylistTracksModal />
+      <PlaylistTracksModal trackLength={props.playlistTracks.length} />
     </div>
   );
 };
