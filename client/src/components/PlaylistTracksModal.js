@@ -25,7 +25,7 @@ class PlaylistTracksModal extends Component {
     <Fragment>
       <button onClick={this.handleOpenModal}>Trigger Modal</button>
       <ReactModal isOpen={this.state.showModal} onRequestClose={this.handleCloseModal}  shouldCloseOnOverlayClick={true} >
-      <div>{5}</div>
+      <div>{this.props.trackLength}</div>
       </ReactModal>
 
 
