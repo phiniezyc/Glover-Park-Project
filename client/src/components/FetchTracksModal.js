@@ -19,14 +19,14 @@ class FetchTracksModal extends Component {
   };
   handleOpenModal = () => {
     this.setState({ showModal: true });
-    this.props.fetchPlaylistTracks(this.props.playlistId)
+    this.props.fetchPlaylistTracks(this.props.playlistId);
   };
 
   render() {
     return (
       <Fragment>
         <div style={buttonDivStyle}>
-        <button onClick={this.handleOpenModal}>Trigger Modal</button>
+        <button onClick={this.handleOpenModal}>Display Songs</button>
         <ReactModal
           isOpen={this.state.showModal}
           onRequestClose={this.handleCloseModal}
