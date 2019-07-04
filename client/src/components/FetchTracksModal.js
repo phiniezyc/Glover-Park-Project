@@ -20,6 +20,7 @@ class FetchTracksModal extends Component {
   };
   handleOpenModal = () => {
     this.setState({ showModal: true });
+    this.props.fetchPlaylistTracks(this.props.playlistId)
   };
 
   render() {
