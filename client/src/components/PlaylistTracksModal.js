@@ -14,16 +14,18 @@ class PlaylistTracksModal extends Component {
     this.setState({ showModal: false });
   }
   handleOpenModal = () => {
-    this.setState({ showModal: true });
+     this.setState({ showModal: true });
   }
 
-  componentDidMount() {
-     //this.handleOpenModal();
+  openModal = this.props.handleOpenModal(true);
+
+  componentDidMount(props) {
+
   }
   render() {
   return (
     <Fragment>
-      <button onClick={this.handleOpenModal}>Trigger Modal</button>
+      <button onClick={this.props.handleOpenModal}>Trigger Modal</button>
       <ReactModal isOpen={this.state.showModal} onRequestClose={this.handleCloseModal}  shouldCloseOnOverlayClick={true} >
       <div>{this.props.trackLength}</div>
       </ReactModal>
