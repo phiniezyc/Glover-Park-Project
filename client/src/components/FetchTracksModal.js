@@ -6,7 +6,6 @@ import { fetchPlaylistTracks } from '../actions/index';
 const buttonDivStyle = {
   flex: '100%'
 };
-
 class FetchTracksModal extends Component {
   constructor(props) {
     super(props);
@@ -27,12 +26,6 @@ class FetchTracksModal extends Component {
     return (
       <Fragment>
         <div style={buttonDivStyle}>
-          <button
-            onClick={() =>
-              this.props.fetchPlaylistTracks(this.props.playlistId)}>Redux Tracks
-              </button>
-        </div>
-
         <button onClick={this.handleOpenModal}>Trigger Modal</button>
         <ReactModal
           isOpen={this.state.showModal}
@@ -40,6 +33,7 @@ class FetchTracksModal extends Component {
           shouldCloseOnOverlayClick={true}>
           <div>{this.props.playlistTracks.length}</div>
         </ReactModal>
+        </div>
       </Fragment>
     );
   }
@@ -61,6 +55,7 @@ function mapDispatchToProps(dispatch) {
     }
   };
 }
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
