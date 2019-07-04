@@ -2,6 +2,9 @@ import React, { Component, Fragment } from 'react';
 import ReactModal from 'react-modal';
 import { connect } from 'react-redux';
 import { fetchPlaylistTracks } from '../actions/index';
+import TracksModalContent from './TracksModalContent';
+
+ReactModal.setAppElement('#root'); // ReactModal use for screen readers (see docs)
 
 const buttonDivStyle = {
   flex: '100%'
@@ -30,8 +33,8 @@ class FetchTracksModal extends Component {
         <ReactModal
           isOpen={this.state.showModal}
           onRequestClose={this.handleCloseModal}
-          shouldCloseOnOverlayClick={true}>
-          <div>{this.props.playlistTracks.length}</div>
+          shouldCloseOnOverlayClick={true} portalClassName="ReactModalPortal">
+          <TracksModalContent playlistTracks={this.props.playlistTracks}/>
         </ReactModal>
         </div>
       </Fragment>
