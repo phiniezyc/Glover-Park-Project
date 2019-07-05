@@ -1,14 +1,12 @@
 import React, { Fragment } from 'react';
 
-const TracksModalContent = (props) => {
-  const displayTracks = props.playlistTracks ?
-  // eslint-disable-next-line arrow-parens
-props.playlistTracks.map(song => (
-  <Fragment key={song.track.id}>
-    <h5 >{song.track.name}</h5> {/* track is the spotify API property */}
-      </Fragment>
-    ))
-    : 'loading';
+// eslint-disable-next-line arrow-parens
+const TracksModalContent = props => {
+  const displayTracks = props.playlistTracks.map((song, i) => (
+    <Fragment key={song.track.id}>
+      <h5>{song.track.name}</h5> {/* track is the spotify API property */}
+    </Fragment>
+  ));
 
   return (
     <Fragment>

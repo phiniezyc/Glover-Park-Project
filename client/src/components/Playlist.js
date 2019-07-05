@@ -22,7 +22,7 @@ const Playlists = (props) => {
   };
   const playlists = props.playlists
     ? props.playlists.map(playlist => (
-      <div key={playlist.id} style={playlistDiv}>
+      <article key={playlist.id} style={playlistDiv}>
         <h4>Playlist: </h4>
         {playlist.name}
         <h4>Owner:</h4>
@@ -30,7 +30,7 @@ const Playlists = (props) => {
         <br />
         <img style={imgStyle} src={playlist.images[0].url} alt="PlayList Cover" />
         <FetchTracksModal playlistId={playlist.id} />
-      </div>
+      </article>
     ))
     : 'Loading...';
 

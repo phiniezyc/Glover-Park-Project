@@ -34,7 +34,7 @@ class FetchTracksModal extends Component {
           isOpen={this.state.showModal}
           onRequestClose={this.handleCloseModal}
           shouldCloseOnOverlayClick={true} portalClassName="ReactModalPortal">
-          <TracksModalContent playlistTracks={this.props.playlistTracks}/>
+          <TracksModalContent playlistTracks={this.props.playlistTracks} />
         </ReactModal>
         </div>
       </Fragment>
