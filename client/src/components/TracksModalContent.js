@@ -7,8 +7,8 @@ const articleStyle = {
 };
 
 const IterateTrackArtists = (item) => { // named item because song is used in displayTracks render
-  const artistsArray = item.track.artists;
-  return artistsArray.map(artist => <h6>{artist.name}</h6>);
+  const artistsArray = item.track.artists.map(artist => artist.name);
+  return artistsArray.join(', ');
 };
 
 // eslint-disable-next-line arrow-parens
