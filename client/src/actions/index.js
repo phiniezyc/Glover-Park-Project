@@ -4,7 +4,7 @@ export function fetchPlaylistTracks(playlistId) { // TODO: Abstract this out to 
   const access_token = sessionStorage.spotifyToken;
   const playlist_id = playlistId;
   // eslint-disable-next-line func-names
-  return (dispatch) => { // Instead of plain objects, we are returning function.
+  return (dispatch) => { // Instead of plain objects, we are returning function by redux design.
     dispatch({
       type: 'FETCH_TRACKS_REQUEST',
     });
