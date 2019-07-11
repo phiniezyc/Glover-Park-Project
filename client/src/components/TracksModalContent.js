@@ -3,16 +3,18 @@ import React, { Fragment } from 'react';
 const articleStyle = {
   backgroundColor: 'blue',
   padding: '10px',
-  margin: '20px',
-  maxWidth: '400px',
-  minWidth: '200px',
-  minHeight: '200px',
+  marginTop: '20px',
+  marginLeft: '15px',
+  width: '400px',
+  height: '400px',
   display: 'inline-flex',
-  flexDirection: 'row',
+  flex: 1,
+  flexDirection: 'column',
   justifyContent: 'space-between',
 };
 
-const IterateTrackArtists = (item) => { // named item because song is used in displayTracks render
+const IterateTrackArtists = (item) => {
+  // named item because song is used in displayTracks render
   // must iterate through artists because in array in API
   const artistsArray = item.track.artists.map(artist => artist.name);
   return artistsArray.join(', ');
