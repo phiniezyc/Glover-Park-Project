@@ -4,9 +4,16 @@ const articleStyle = {
   backgroundColor: 'blue',
   padding: '10px',
   margin: '20px',
+  maxWidth: '400px',
+  minWidth: '200px',
+  minHeight: '200px',
+  display: 'inline-flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
 };
 
 const IterateTrackArtists = (item) => { // named item because song is used in displayTracks render
+  // must iterate through artists because in array in API
   const artistsArray = item.track.artists.map(artist => artist.name);
   return artistsArray.join(', ');
 };

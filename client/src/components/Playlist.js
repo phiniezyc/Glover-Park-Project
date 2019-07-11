@@ -9,9 +9,9 @@ const Playlists = (props) => {
     minHeight: 300,
     width: '33%',
     display: 'flex',
+    flex: 1,
     border: '2px solid green',
     margin: 10,
-    flex: 1,
     textAlign: 'center',
   };
 
