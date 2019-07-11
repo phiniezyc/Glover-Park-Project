@@ -20,9 +20,10 @@ const IterateTrackArtists = (item) => { // named item because song is used in di
 
 // eslint-disable-next-line arrow-parens
 const TracksModalContent = props => {
-  const displayTracks = props.playlistTracks.map(song => (
+  const displayTracks = props.playlistTracks.map((song, i) => (
     <Fragment key={song.track.id}>
       <article style={articleStyle}>
+        <h2>Song: {i + 1}</h2>
         <h5>Track Name: {song.track.name}</h5> {/* track is the spotify API property */}
         {IterateTrackArtists(song)}
         <h6>Added: {song.added_at}</h6>
