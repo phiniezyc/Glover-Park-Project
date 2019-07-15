@@ -2,7 +2,6 @@
 // eslint-disable-next-line import/prefer-default-export
 export function fetchPlaylistTracks(playlistId) { // TODO: Abstract this out to own file
   const access_token = sessionStorage.spotifyToken;
-  const playlist_id = playlistId;
   // eslint-disable-next-line func-names
   return (dispatch) => { // Instead of plain objects, we are returning function by redux design.
     dispatch({
@@ -16,7 +15,7 @@ export function fetchPlaylistTracks(playlistId) { // TODO: Abstract this out to 
         'Content-Type': 'application/json',
       },
     };
-    return fetch(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks`, options)
+    return fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, options)
     // Getting json body(will contain `tracks` or `error` prop,
     // depending on request was failed or not) from server response
     // And providing `response` and `body` variables to the next chain.

@@ -8,9 +8,8 @@ const articleStyle = {
   width: '400px',
   height: '400px',
   display: 'inline-flex',
-  flex: 1,
   flexDirection: 'column',
-  justifyContent: 'space-between',
+  // justifyContent: 'space-between',
 };
 
 const IterateTrackArtists = (item) => {
