@@ -5,11 +5,17 @@ const articleStyle = {
   padding: '10px',
   marginTop: '20px',
   marginLeft: '15px',
-  width: '400px',
-  height: '400px',
-  display: 'inline-flex',
-  flexDirection: 'column',
+  // width: '400px',
+  // height: '400px',
+  display: 'inline-flex', // FIXME: ? changes this display
+  flexDirection: 'row',
   // justifyContent: 'space-between',
+};
+
+const inlineStyle = {
+  display: 'inline',
+  marginTop: '0px',
+  marginLeft: '10px',
 };
 
 const IterateTrackArtists = (item) => {
@@ -24,12 +30,12 @@ const TracksModalContent = props => {
   const displayTracks = props.playlistTracks.map((song, i) => (
     <Fragment key={song.track.id}>
       <article style={articleStyle}>
-        <h2>Song: {i + 1}</h2>
-        <h5>Track Name: {song.track.name}</h5> {/* track is the spotify API property */}
-        {IterateTrackArtists(song)}
-        <h6>Added: {song.added_at}</h6>
-        <h6>Album: {song.track.album.name}</h6>
-        <h6>Popularity: {song.track.popularity}</h6>
+        <h6 style={inlineStyle}>Song: {i + 1}</h6>
+        <h4 style={inlineStyle}>Track Name: {song.track.name}</h4> {/* track is the spotify API property */}
+        <h6 style={inlineStyle}>{IterateTrackArtists(song)}</h6>
+        <h6 style={inlineStyle}>Added: {song.added_at}</h6>
+        <h6 style={inlineStyle}>Album: {song.track.album.name}</h6>
+        <h6 style={inlineStyle}>Popularity: {song.track.popularity}</h6>
       </article>
     </Fragment>
   ));
