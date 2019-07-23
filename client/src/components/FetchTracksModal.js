@@ -29,13 +29,15 @@ class FetchTracksModal extends Component {
     return (
       <Fragment>
         <div style={buttonDivStyle}>
-        <button onClick={this.handleOpenModal}>Display Songs</button>
-        <ReactModal
-          isOpen={this.state.showModal}
-          onRequestClose={this.handleCloseModal}
-          shouldCloseOnOverlayClick={true} portalClassName="ReactModalPortal">
-          <TracksModalContent playlistTracks={this.props.playlistTracks} />
-        </ReactModal>
+          <button onClick={this.handleOpenModal}>Display Songs</button>
+          <ReactModal
+            isOpen={this.state.showModal}
+            onRequestClose={this.handleCloseModal}
+            shouldCloseOnOverlayClick={true}
+            portalClassName="ReactModalPortal"
+          >
+            <TracksModalContent playlistTracks={this.props.playlistTracks} />
+          </ReactModal>
         </div>
       </Fragment>
     );
