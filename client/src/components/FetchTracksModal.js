@@ -30,7 +30,7 @@ class FetchTracksModal extends Component {
     return (
       <Fragment>
         <div style={buttonDivStyle}>
-          <button onClick={this.handleOpenModal}>Display Songs</button>
+          <button onClick={this.handleOpenModal}>Preview Tracks</button>
           <ReactModal
             isOpen={this.state.showModal}
             onRequestClose={this.handleCloseModal}
