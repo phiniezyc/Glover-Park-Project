@@ -7,9 +7,12 @@ const articleStyle = {
   marginLeft: '15px',
   // width: '400px',
   // height: '400px',
-  display: 'inline-flex', // FIXME: ? changes this display
+  display: 'flex', // FIXME: ? changes this display
   flexDirection: 'row',
   // justifyContent: 'space-between',
+  // display: 'flex', this centers content in the article
+  justifyContent: 'flex-start',
+  flexWrap: 'wrap',
 };
 
 const inlineStyle = {

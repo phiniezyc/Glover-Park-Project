@@ -7,6 +7,7 @@ import TracksModalContent from './TracksModalContent';
 ReactModal.setAppElement('#root'); // ReactModal use for screen readers (see docs)
 
 const buttonDivStyle = {
+
   flex: '100%'
 };
 class FetchTracksModal extends Component {
