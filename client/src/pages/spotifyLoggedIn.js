@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Playlist from '../components/Playlist';
 
 import PlaylistTracksDisplay from '../components/PlaylistTracksDisplay';
+
 class spotifyLoggedIn extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +11,7 @@ class spotifyLoggedIn extends Component {
     this.state = {
       access_token: params.access_token,
       spotifyPlaylists: [],
-      errorMessage: ''
+      errorMessage: '',
     };
   }
   // FIXME: USE REACT URL PARAMS INSTEAD OF GETHASH
