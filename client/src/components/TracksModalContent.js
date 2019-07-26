@@ -45,7 +45,8 @@ const TracksModalContent = props => {
 
   return (
     <Fragment>
-      <h1>Number of Songs: {props.playlistTracks.length}</h1>
+      <h1>Total Songs: {props.playlistTracks.length}</h1>
+      <button>Edit Playlist</button>
       {displayTracks}
     </Fragment>
   );
