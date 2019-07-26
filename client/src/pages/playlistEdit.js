@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { Fragment, Component } from 'react';
 
-const PlaylistEdit = () => (
-  <React.Fragment>
-    <header>
-      <h2>Edit Tracks Here!</h2>
-    </header>
-  </React.Fragment>
-);
+class PlaylistEdit extends Component {
+  render() {
+    return (
+      <Fragment>
+        <header>
+          <h2>Edit Tracks Here!</h2>
+        </header>
+      </Fragment>
+    );
+  }
+}
+
 
 export default PlaylistEdit;
