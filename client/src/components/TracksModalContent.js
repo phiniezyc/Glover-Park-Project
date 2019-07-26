@@ -1,6 +1,13 @@
 import React, { Fragment } from 'react';
 
-import { withRouter } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
+/* withRouter connects component to router/give access to history
+for navigation functional component not directly rendered by router.
+See more info:
+https://stackoverflow.com/questions/53539314/what-is-withrouter-for-in-react-router-dom
+
+https://reacttraining.com/react-router/web/api/withRouter
+*/
 
 const articleStyle = {
   backgroundColor: 'blue',
@@ -17,6 +24,7 @@ const articleStyle = {
   flexWrap: 'wrap',
 };
 
+// TODO: MAKE THESE ALL A CLASS ONCE PUT IN STYLE SHEET
 const inlineStyle = {
   display: 'inline',
   marginTop: '0px',
@@ -35,7 +43,7 @@ const TracksModalContent = props => {
   const displayTracks = props.playlistTracks.map((song, i) => (
     <Fragment key={song.track.id}>
       <article style={articleStyle}>
-        <h6 style={inlineStyle}>Song: {i + 1}</h6>
+        <h6 style={inlineStyle}>{i + 1}</h6>
         <h4 style={inlineStyle}>Track Name: {song.track.name}</h4> {/* track is the spotify API property */}
         <h6 style={inlineStyle}>{IterateTrackArtists(song)}</h6>
         <h6 style={inlineStyle}>Added: {song.added_at}</h6>
@@ -46,11 +54,11 @@ const TracksModalContent = props => {
   ));
 
   return (
-    <Fragment>
-      <h1>Total Songs: {props.playlistTracks.length}</h1>
-      <button onClick={() => { props.history.push('/playlist/edit/1'); }}>Edit Playlist</button>
+    <main>
+      <h1 style={inlineStyle}>Total Songs: {props.playlistTracks.length}</h1>
+      <button style={inlineStyle} onClick={() => { props.history.push(`/playlist/edit/${props.playlistId}`); }}>Edit Playlist</button>
       {displayTracks}
-    </Fragment>
+    </main>
   );
 };
 
