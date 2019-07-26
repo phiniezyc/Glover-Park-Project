@@ -1,4 +1,5 @@
 dependencies:
+  history: 4.9.0
   react: 16.8.6
   react-dom: 16.8.6
   react-redux: 7.1.0
@@ -1559,6 +1560,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-TuI4qpWZP6lGOGIuGWtp9sPluqYICmbk8T/1vpSysqJxRPkudh/ofFWyqdcMsDf2s7KvDL4/YHgKyvcS3g9CJQ==
+  /@babel/runtime/7.5.5:
+    dependencies:
+      regenerator-runtime: 0.13.3
+    dev: false
+    resolution:
+      integrity: sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
   /@babel/template/7.4.4:
     dependencies:
       '@babel/code-frame': 7.0.0
@@ -5355,11 +5362,11 @@ packages:
       integrity: sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
   /history/4.9.0:
     dependencies:
-      '@babel/runtime': 7.4.5
+      '@babel/runtime': 7.5.5
       loose-envify: 1.4.0
       resolve-pathname: 2.2.0
-      tiny-invariant: 1.0.4
-      tiny-warning: 1.0.2
+      tiny-invariant: 1.0.6
+      tiny-warning: 1.0.3
       value-equal: 0.4.0
     dev: false
     resolution:
@@ -9158,6 +9165,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-S/TQAZJO+D3m9xeN1WTI8dLKBBiRgXBlTJvbWjCThHWZj9EvHK70Ff50/tYj2J/fvBY6JtFVwRuazHN2E7M9BA==
+  /regenerator-runtime/0.13.3:
+    dev: false
+    resolution:
+      integrity: sha512-naKIZz2GQ8JWh///G7L3X6LaQUAMp2lvb1rvwwsURe/VXwD6VMfr+/1NuNw3ag8v2kY1aQ/go5SNn79O9JU7yw==
   /regenerator-transform/0.14.0:
     dependencies:
       private: 0.1.8
@@ -10258,10 +10269,18 @@ packages:
     dev: false
     resolution:
       integrity: sha512-lMhRd/djQJ3MoaHEBrw8e2/uM4rs9YMNk0iOr8rHQ0QdbM7D4l0gFl3szKdeixrlyfm9Zqi4dxHCM2qVG8ND5g==
+  /tiny-invariant/1.0.6:
+    dev: false
+    resolution:
+      integrity: sha512-FOyLWWVjG+aC0UqG76V53yAWdXfH8bO6FNmyZOuUrzDzK8DI3/JRY25UD7+g49JWM1LXwymsKERB+DzI0dTEQA==
   /tiny-warning/1.0.2:
     dev: false
     resolution:
       integrity: sha512-rru86D9CpQRLvsFG5XFdy0KdLAvjdQDyZCsRcuu60WtzFylDM3eAWSxEVz5kzL2Gp544XiUvPbVKtOA/txLi9Q==
+  /tiny-warning/1.0.3:
+    dev: false
+    resolution:
+      integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==
   /tmp/0.0.33:
     dependencies:
       os-tmpdir: 1.0.2
@@ -11194,6 +11213,7 @@ specifiers:
   eslint-plugin-import: ^2.17.2
   eslint-plugin-jsx-a11y: ^6.2.1
   eslint-plugin-react: ^7.13.0
+  history: ^4.9.0
   react: ^16.8.6
   react-dom: ^16.8.1
   react-redux: ^7.1.0
