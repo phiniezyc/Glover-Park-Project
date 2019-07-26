@@ -1,21 +1,17 @@
-import React, { Fragment, Component } from 'react';
-
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
 
-class PlaylistEdit extends Component {
-
-  render() {
-    return (
-      <Fragment>
-        <header>
-          <h2>Edit Tracks Here!</h2>
-          {console.log('YOUR TRACKS', this.props.playlistTracks)}
-        </header>
-      </Fragment>
-    );
-  }
-}
+const PlaylistEdit = props => (
+  <Fragment>
+    <header>
+      <h2>Edit Tracks Here!</h2>
+    </header>
+    <article>
+      {console.log('YOUR TRACKS', props.playlistTracks)}
+    </article>
+  </Fragment>
+);
 
 const mapStateToProps = state => ({ playlistTracks: state.playlistTracks });
 
