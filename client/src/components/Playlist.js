@@ -28,7 +28,7 @@ const Playlists = (props) => {
         <h4>Owner:</h4>
         {playlist.owner.display_name}
         <br />
-        <img style={imgStyle} src={playlist.images[0].url} alt="PlayList Cover" />
+        {playlist.images[0].url === undefined || null ? 'no image' : <img style={imgStyle} src={playlist.images[0].url} alt="PlayList Cover" /> }
         <FetchTracksModal playlistId={playlist.id} />
       </article>
     ))
