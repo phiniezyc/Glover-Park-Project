@@ -31,10 +31,9 @@ const IterateTrackArtists = (item) => {
   return artistsArray.join(', ');
 };
 
-const displayTracks = (songs) => {
-  console.log('Dis Funct', songs.tracks[0].track.name);
+const PlaylistEdit = (props) => {
   // FIXME: need to make parameter consistent. tracks one place, songs here, etc...
-  (songs.tracks || []).map((song, i) => (
+  const displayTracks = props.playlistTracks.tracks.map((song, i) => (
     <Fragment key={song.track.id}>
       <article style={articleStyle}>
         <h6 style={inlineStyle}>{i + 1}</h6>
@@ -47,22 +46,21 @@ const displayTracks = (songs) => {
       </article>
     </Fragment>
   ));
+
+  return (
+    <Fragment>
+      <header>
+        <h2>Edit Tracks Here!</h2>
+      </header>
+      <article>
+        <h3>{displayTracks.length}</h3>
+        {displayTracks}
+        {console.log('YOUR TRACKS', props.playlistTracks)}
+      </article>
+    </Fragment>
+  );
 };
 
-const PlaylistEdit = props => (
-  <Fragment>
-    <header>
-      <h2>Edit Tracks Here!</h2>
-    </header>
-    <article>
-      <h3>{displayTracks.length}</h3>
-      {props.playlistTracks || [] ? displayTracks(props.playlistTracks) : "loading"}
-      {console.log('YOUR TRACKS', props.playlistTracks)}
-    </article>
-  </Fragment>
-);
-
 const mapStateToProps = state => ({ playlistTracks: state.playlistTracks });
-
 
 export default connect(mapStateToProps)(PlaylistEdit);
