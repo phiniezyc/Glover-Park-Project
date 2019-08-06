@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
 
 const articleStyle = {
@@ -31,11 +31,24 @@ const IterateTrackArtists = (item) => {
   return artistsArray.join(', ');
 };
 
-const PlaylistEdit = (props) => {
+class PlaylistEdit extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tracksToDelete: [],
+    }
+  }
+
+  passTrackIdToDelete = (track) => {
+    this.setState({ tracksToDelete: [...this.state.tracksToDelete, track]})
+    console.log("Tracks to Delete", this.state.tracksToDelete)
+  }
+
   // FIXME: need to make parameter consistent. tracks one place, songs here, etc...
-  const displayTracks = props.playlistTracks.tracks.map((song, i) => (
+  displayTracks = this.props.playlistTracks.tracks.map((song, i) => (
     <Fragment key={song.track.id}>
       <article style={articleStyle}>
+        <button onClick={() => this.passTrackIdToDelete(song.track.id)}>Delete</button>
         <h6 style={inlineStyle}>{i + 1}</h6>
         <h4 style={inlineStyle}>Track Name: {song.track.name}</h4>
         {/* track is the spotify API property */}
@@ -47,18 +60,19 @@ const PlaylistEdit = (props) => {
     </Fragment>
   ));
 
+  render() {
   return (
     <Fragment>
       <header>
         <h2>Edit Tracks Here!</h2>
       </header>
       <article>
-        <h3>{displayTracks.length}</h3>
-        {displayTracks}
-        {console.log('YOUR TRACKS', props.playlistTracks)}
+        <h3>{this.displayTracks.length}</h3>
+        {this.displayTracks}
       </article>
     </Fragment>
   );
+}
 };
 
 const mapStateToProps = state => ({ playlistTracks: state.playlistTracks });
