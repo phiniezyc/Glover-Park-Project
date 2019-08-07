@@ -39,15 +39,30 @@ class PlaylistEdit extends Component {
     }
   }
 
-  showConfirmDeleteButton = (trackNumber) => {
+  showConfirmDeleteButton = (trackNumber) => { // TODO: modularize this to handle the other cases
     if (this.state.tracksToDelete.length >=1) {
-      return <button>Confirm Delete {trackNumber}</button>
+      return <button onClick={()=>this.spotifyDeleteReq()}>Confirm Delete {trackNumber}</button>
     }
+  }
+  spotifyDeleteReq =() => {
+    const options = {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${window.sessionStorage.getItem('spotifyToken')}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        tracks: this.state.tracksToDelete
+      })
+    }
+    return fetch(`https://api.spotify.com/v1/playlists/${this.props.match.params.id}/tracks`, options)
+      .then(response => console.log(response.json()))
+      .then(this.setState({tracksToDelete: []}))
+      .catch(err => console.log(err))
   }
 
   passTrackIdToDelete = (track) => {
-    this.setState({ tracksToDelete: [...this.state.tracksToDelete, track]})
-    console.log("Tracks to Delete", this.state.tracksToDelete)
+    this.setState({ tracksToDelete: [...this.state.tracksToDelete, { uri: `spotify:track:${track}`}]})
   }
 
   // FIXME: need to make parameter consistent. tracks one place, songs here, etc...
