@@ -39,6 +39,12 @@ class PlaylistEdit extends Component {
     }
   }
 
+  showConfirmDeleteButton = (trackNumber) => {
+    if (this.state.tracksToDelete.length >=1) {
+      return <button>Confirm Delete {trackNumber}</button>
+    }
+  }
+
   passTrackIdToDelete = (track) => {
     this.setState({ tracksToDelete: [...this.state.tracksToDelete, track]})
     console.log("Tracks to Delete", this.state.tracksToDelete)
@@ -48,7 +54,7 @@ class PlaylistEdit extends Component {
   displayTracks = this.props.playlistTracks.tracks.map((song, i) => (
     <Fragment key={song.track.id}>
       <article style={articleStyle}>
-        <button onClick={() => this.passTrackIdToDelete(song.track.id)}>Delete</button>
+        <button onClick={() => this.passTrackIdToDelete(song.track.id)}>Select</button>
         <h6 style={inlineStyle}>{i + 1}</h6>
         <h4 style={inlineStyle}>Track Name: {song.track.name}</h4>
         {/* track is the spotify API property */}
@@ -61,17 +67,18 @@ class PlaylistEdit extends Component {
   ));
 
   render() {
-  return (
-    <Fragment>
-      <header>
-        <h2>Edit Tracks Here!</h2>
-      </header>
-      <article>
-        <h3>{this.displayTracks.length}</h3>
-        {this.displayTracks}
-      </article>
-    </Fragment>
-  );
+    return (
+      <Fragment>
+        <header>
+          <h2>Edit Tracks Here!</h2>
+          {this.showConfirmDeleteButton(this.state.tracksToDelete.length)}
+        </header>
+        <article>
+          <h3>{this.displayTracks.length}</h3>
+          {this.displayTracks}
+        </article>
+      </Fragment>
+      );
 }
 };
 
