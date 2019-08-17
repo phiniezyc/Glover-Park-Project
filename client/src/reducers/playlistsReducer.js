@@ -1,4 +1,4 @@
-import { FETCH_TRACKS_REQUEST,FETCH_TRACKS_SUCCESS,FETCH_TRACKS_FAILURE } from '../constants';
+import { FETCH_TRACKS_REQUEST, FETCH_TRACKS_SUCCESS, FETCH_TRACKS_FAILURE } from '../constants';
 
 const INITIAL_STATE = {
   tracks: [],
