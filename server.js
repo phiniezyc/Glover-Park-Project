@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3001;
 
 const routes = require('./routes');
 
+
 // TODO: need to clean node modules up and put some in dev dependency
 
 app
@@ -25,3 +26,4 @@ app.use(routes);
 app.listen(PORT, () => {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
+

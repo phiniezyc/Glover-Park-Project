@@ -70,7 +70,7 @@ class PlaylistEdit extends Component {
     <Fragment key={song.track.id}>
       <article style={articleStyle}>
         <button onClick={() => this.passTrackIdToDelete(song.track.id)}>Select</button>
-        <h6 style={inlineStyle}>{i + 1}</h6>
+        <h6 style={inlineStyle}>{i+1}</h6> {/* USE '#' for track column heading https://stackoverflow.com/questions/24840074/how-to-stick-table-headerthead-on-top-while-scrolling-down-the-table-rows-with */}
         <h4 style={inlineStyle}>Track Name: {song.track.name}</h4>
         {/* track is the spotify API property */}
         <h6 style={inlineStyle}>{IterateTrackArtists(song)}</h6>
