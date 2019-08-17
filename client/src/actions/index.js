@@ -1,4 +1,4 @@
-import { FETCH_TRACKS_REQUEST, FETCH_TRACKS_FAILURE, FETCH_TRACKS_SUCCESS } from '../constants';
+import { FETCHTRACKS } from '../constants';
 
 /* eslint-disable camelcase */
 // eslint-disable-next-line import/prefer-default-export
@@ -7,7 +7,7 @@ export function fetchPlaylistTracks(playlistId) { // TODO: Abstract this out to 
   // eslint-disable-next-line func-names
   return (dispatch) => { // Instead of plain objects, we are returning function by redux design.
     dispatch({
-      type: FETCH_TRACKS_REQUEST,
+      type: FETCHTRACKS.FETCH_TRACKS_REQUEST,
     });
 
     const options = {
@@ -26,12 +26,12 @@ export function fetchPlaylistTracks(playlistId) { // TODO: Abstract this out to 
       .then(({ response, body }) => {
         if (!response.ok) { // If request failed, dispatch FAILURE action.
           dispatch({
-            type: FETCH_TRACKS_FAILURE,
+            type: FETCHTRACKS.FETCH_TRACKS_FAILURE,
             error: body.error,
           });
         } else {
           dispatch({
-            type: FETCH_TRACKS_SUCCESS,
+            type: FETCHTRACKS.FETCH_TRACKS_SUCCESS,
             payload: body.items,
           });
         }

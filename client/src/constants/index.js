@@ -1,8 +1,5 @@
-const FETCH_TRACKS_REQUEST = 'FETCH_TRACKS_REQUEST';
 
-const FETCH_TRACKS_FAILURE = 'FETCH_TRACKS_FAILURE';
+import * as FETCHTRACKS from './fetchTracks';
 
-const FETCH_TRACKS_SUCCESS = 'FETCH_TRACKS_SUCCESS';
-
-
-export { FETCH_TRACKS_REQUEST, FETCH_TRACKS_FAILURE, FETCH_TRACKS_SUCCESS };
+// eslint-disable-next-line import/prefer-default-export
+export { FETCHTRACKS };
