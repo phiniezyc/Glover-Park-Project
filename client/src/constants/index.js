@@ -1,5 +1,5 @@
 
-import * as FETCHTRACKS from './fetchTracks';
+import * as FETCH_TRACKS from './fetchTracks';
 
 // eslint-disable-next-line import/prefer-default-export
-export { FETCHTRACKS };
+export { FETCH_TRACKS };

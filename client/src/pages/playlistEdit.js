@@ -44,7 +44,7 @@ class PlaylistEdit extends Component {
       return <button onClick={()=>this.spotifyDeleteReq()}>Confirm Delete {trackNumber}</button>
     }
   }
-  spotifyDeleteReq =() => {
+  spotifyDeleteReq =() => { // TODO: MAKE REDUX ACTION
     const options = {
       method: 'DELETE',
       headers: {
