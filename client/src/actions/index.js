@@ -1,4 +1,4 @@
-import {fetchPlaylistTracks} from './fetchPlaylistTracks';
+import { fetchPlaylistTracks } from './fetchPlaylistTracks';
 
 
 export default fetchPlaylistTracks;
