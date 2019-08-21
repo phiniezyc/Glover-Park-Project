@@ -66,16 +66,18 @@ class PlaylistEdit extends Component {
     this.setState({ tracksToDelete: [...this.state.tracksToDelete, { uri: `spotify:track:${track}`}]})
   }
 /*<button onClick={() => this.passTrackIdToDelete(song.track.id)}>Delete</button>*/
+
   // FIXME: need to make parameter consistent. tracks one place, songs here, etc...
   displayTracks = this.props.playlistTracks.tracks.map((song, i) => (
     <Fragment key={song.track.id}>
         <tr>
-        <td style={inlineStyle}>{i+1}</td>
-        <td style={inlineStyle}>{song.track.name}</td>
-        <td style={inlineStyle}>{IterateTrackArtists(song)}</td>
-        <td style={inlineStyle}>{song.added_at}</td>
-        <td style={inlineStyle}>{song.track.album.name}</td>
-        <td style={inlineStyle}>{song.track.popularity}</td>
+          <td id="buttonrow"> <input type="button" value="Button"  onClick={() => this.passTrackIdToDelete(song.track.id)}/> </td>
+          <td style={inlineStyle}>{i+1}</td>
+          <td style={inlineStyle}>{song.track.name}</td>
+          <td style={inlineStyle}>{IterateTrackArtists(song)}</td>
+          <td style={inlineStyle}>{song.added_at}</td>
+          <td style={inlineStyle}>{song.track.album.name}</td>
+          <td style={inlineStyle}>{song.track.popularity}</td>
         </tr>
     </Fragment>
   ));
@@ -85,11 +87,15 @@ class PlaylistEdit extends Component {
       <Fragment>
         <header>
           <h2>Edit Tracks Here!</h2>
+          <article>
+          <h3>{this.displayTracks.length}</h3>
+          </article>
           {this.showConfirmDeleteButton(this.state.tracksToDelete.length)}
         </header>
         <table>
           <thead>
           <tr>
+            <th></th>
             <th>#</th>
             <th>Name</th>
             <th>Artists</th>
@@ -99,17 +105,9 @@ class PlaylistEdit extends Component {
           </tr>
           </thead>
           <tbody>
-            
             {this.displayTracks}
-
-
-
           </tbody>
         </table>
-        <article>
-          <h3>{this.displayTracks.length}</h3>
-        </article>
-
       </Fragment>
       );
 }
