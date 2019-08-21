@@ -99,9 +99,9 @@ class PlaylistEdit extends Component {
           </tr>
           </thead>
           <tbody>
-            <tr>
+            
             {this.displayTracks}
-            </tr>
+
 
 
           </tbody>
