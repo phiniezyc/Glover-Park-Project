@@ -37,6 +37,7 @@ const IterateTrackArtists = (item) => {
   const artistsArray = item.track.artists.map(artist => artist.name);
   return artistsArray.join(', ');
 };
+
 // eslint-disable-next-line arrow-parens
 const TracksModalContent = props => {
   const displayTracks = props.playlistTracks.map((song, i) => (
