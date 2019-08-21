@@ -1,26 +1,27 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
-const articleStyle = {
-  backgroundColor: 'blue',
-  padding: '10px',
-  marginTop: '20px',
-  marginLeft: '15px',
-  // width: '400px',
-  // height: '400px',
-  display: 'flex', // FIXME: ? changes this display
-  flexDirection: 'row',
-  // justifyContent: 'space-between',
-  // display: 'flex', this centers content in the article
-  justifyContent: 'flex-start',
-  flexWrap: 'wrap',
+const rowStyle = {
+  // backgroundColor: 'blue',
+  // padding: '10px',
+  // marginTop: '20px',
+  // marginLeft: '15px',
+  // // width: '400px',
+  // // height: '400px',
+  // display: 'flex', // FIXME: ? changes this display
+  // flexDirection: 'row',
+  // // justifyContent: 'space-between',
+  // // display: 'flex', this centers content in the article
+  // justifyContent: 'flex-start',
+  // flexWrap: 'wrap',
+  display: 'block',
 };
 
 // TODO: MAKE THESE ALL A CLASS ONCE PUT IN STYLE SHEET
 const inlineStyle = {
-  display: 'inline',
-  marginTop: '0px',
-  marginLeft: '10px',
+  // display: 'inline',
+  // marginTop: '0px',
+  // marginLeft: '10px',
 };
 
 
@@ -64,20 +65,18 @@ class PlaylistEdit extends Component {
   passTrackIdToDelete = (track) => {
     this.setState({ tracksToDelete: [...this.state.tracksToDelete, { uri: `spotify:track:${track}`}]})
   }
-
+/*<button onClick={() => this.passTrackIdToDelete(song.track.id)}>Delete</button>*/
   // FIXME: need to make parameter consistent. tracks one place, songs here, etc...
   displayTracks = this.props.playlistTracks.tracks.map((song, i) => (
     <Fragment key={song.track.id}>
-      <article style={articleStyle}>
-        <button onClick={() => this.passTrackIdToDelete(song.track.id)}>Select</button>
-        <h6 style={inlineStyle}>{i+1}</h6> {/* USE '#' for track column heading https://stackoverflow.com/questions/24840074/how-to-stick-table-headerthead-on-top-while-scrolling-down-the-table-rows-with */}
-        <h4 style={inlineStyle}>Track Name: {song.track.name}</h4>
-        {/* track is the spotify API property */}
-        <h6 style={inlineStyle}>{IterateTrackArtists(song)}</h6>
-        <h6 style={inlineStyle}>Added: {song.added_at}</h6>
-        <h6 style={inlineStyle}>Album: {song.track.album.name}</h6>
-        <h6 style={inlineStyle}>Popularity: {song.track.popularity}</h6>
-      </article>
+        <tr>
+        <td style={inlineStyle}>{i+1}</td>
+        <td style={inlineStyle}>{song.track.name}</td>
+        <td style={inlineStyle}>{IterateTrackArtists(song)}</td>
+        <td style={inlineStyle}>{song.added_at}</td>
+        <td style={inlineStyle}>{song.track.album.name}</td>
+        <td style={inlineStyle}>{song.track.popularity}</td>
+        </tr>
     </Fragment>
   ));
 
@@ -88,10 +87,29 @@ class PlaylistEdit extends Component {
           <h2>Edit Tracks Here!</h2>
           {this.showConfirmDeleteButton(this.state.tracksToDelete.length)}
         </header>
+        <table>
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Artists</th>
+            <th>Added</th>
+            <th>Album</th>
+            <th>Popularity</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr>
+            {this.displayTracks}
+            </tr>
+
+
+          </tbody>
+        </table>
         <article>
           <h3>{this.displayTracks.length}</h3>
-          {this.displayTracks}
         </article>
+
       </Fragment>
       );
 }
