@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
 
-
 const tableRowStyle = {
   backgroundColor: 'grey',
 };
@@ -54,7 +53,7 @@ class PlaylistEdit extends Component {
   displayTracks = this.props.playlistTracks.tracks.map((song, i) => (
     <Fragment key={song.track.id}>
         <tr style={tableRowStyle}>
-          <td id="buttonrow"> <input type="button" value="Select"  onClick={() => this.passTrackIdToDelete(song.track.id)}/> </td>
+          <td > <input type="button" value="Select"  onClick={() => this.passTrackIdToDelete(song.track.id)}/> </td>
           <td>{i+1}</td>
           <td>{song.track.name}</td>
           <td>{IterateTrackArtists(song)}</td>
