@@ -37,7 +37,7 @@ const TracksModalContent = props => {
   return (
     <main>
       <h1>Total Songs: {props.playlistTracks.length}</h1>
-      <button onClick={() => { props.history.push(`/playlist/edit/${props.playlistId}`); }}>Edit Playlist</button>
+      <button onClick={() => { props.history.push(`/playlist/edit/${props.playlistId}`); }}>See Details</button>
       <table>
         <thead>
           <tr>

@@ -72,7 +72,7 @@ class PlaylistEdit extends Component {
   displayTracks = this.props.playlistTracks.tracks.map((song, i) => (
     <Fragment key={song.track.id}>
         <tr>
-          <td id="buttonrow"> <input type="button" value="Button"  onClick={() => this.passTrackIdToDelete(song.track.id)}/> </td>
+          <td id="buttonrow"> <input type="button" value="Select"  onClick={() => this.passTrackIdToDelete(song.track.id)}/> </td>
           <td style={inlineStyle}>{i+1}</td>
           <td style={inlineStyle}>{song.track.name}</td>
           <td style={inlineStyle}>{IterateTrackArtists(song)}</td>
