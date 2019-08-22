@@ -1,4 +1,5 @@
 dependencies:
+  dayjs: 1.8.15
   react: 16.9.0
   react-dom: 16.9.0
   react-modal: 3.9.1
@@ -3797,6 +3798,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-6vQ5/U1ISK105cx9vvIAZyueNFs=
+  /dayjs/1.8.15:
+    dev: false
+    resolution:
+      integrity: sha512-HYHCI1nohG52B45vCQg8Re3hNDZbMroWPkhz50yaX7Lu0ATyjGsTdoYZBpjED9ar6chqTx2dmSmM8A51mojnAg==
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -11185,6 +11190,7 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  dayjs: ^1.8.15
   eslint-config-airbnb: ^17.1.0
   eslint-config-react-app: ^4.0.1
   eslint-plugin-import: ^2.17.2

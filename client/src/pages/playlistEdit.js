@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import dayjs from 'dayjs';
 
 
 const tableRowStyle = {
@@ -57,7 +58,7 @@ class PlaylistEdit extends Component {
           <td>{i+1}</td>
           <td>{song.track.name}</td>
           <td>{IterateTrackArtists(song)}</td>
-          <td>{song.added_at}</td>
+          <td>{dayjs(song.added_at).format('MMM DD YYYY')}</td>
           <td>{song.track.album.name}</td>
           <td>{song.track.popularity}</td>
         </tr>
