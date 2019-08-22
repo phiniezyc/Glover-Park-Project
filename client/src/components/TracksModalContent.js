@@ -13,6 +13,7 @@ const tableRowStyle = {
   backgroundColor: 'grey',
 };
 
+
 const IterateTrackArtists = (item) => {
   // named item because song is used in displayTracks render
   // must iterate through artists because in array in spotify API

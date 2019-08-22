@@ -1,29 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
-const rowStyle = {
-  // backgroundColor: 'blue',
-  // padding: '10px',
-  // marginTop: '20px',
-  // marginLeft: '15px',
-  // // width: '400px',
-  // // height: '400px',
-  // display: 'flex', // FIXME: ? changes this display
-  // flexDirection: 'row',
-  // // justifyContent: 'space-between',
-  // // display: 'flex', this centers content in the article
-  // justifyContent: 'flex-start',
-  // flexWrap: 'wrap',
-  display: 'block',
-};
 
-// TODO: MAKE THESE ALL A CLASS ONCE PUT IN STYLE SHEET
-const inlineStyle = {
-  // display: 'inline',
-  // marginTop: '0px',
-  // marginLeft: '10px',
-};
 
+const tableRowStyle = {
+  backgroundColor: 'grey',
+};
 
 const IterateTrackArtists = (item) => {
   // named item because song is used in displayTracks render
@@ -71,14 +53,14 @@ class PlaylistEdit extends Component {
   // FIXME: need to make parameter consistent. tracks one place, songs here, etc...
   displayTracks = this.props.playlistTracks.tracks.map((song, i) => (
     <Fragment key={song.track.id}>
-        <tr>
+        <tr style={tableRowStyle}>
           <td id="buttonrow"> <input type="button" value="Select"  onClick={() => this.passTrackIdToDelete(song.track.id)}/> </td>
-          <td style={inlineStyle}>{i+1}</td>
-          <td style={inlineStyle}>{song.track.name}</td>
-          <td style={inlineStyle}>{IterateTrackArtists(song)}</td>
-          <td style={inlineStyle}>{song.added_at}</td>
-          <td style={inlineStyle}>{song.track.album.name}</td>
-          <td style={inlineStyle}>{song.track.popularity}</td>
+          <td>{i+1}</td>
+          <td>{song.track.name}</td>
+          <td>{IterateTrackArtists(song)}</td>
+          <td>{song.added_at}</td>
+          <td>{song.track.album.name}</td>
+          <td>{song.track.popularity}</td>
         </tr>
     </Fragment>
   ));
