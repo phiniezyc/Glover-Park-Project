@@ -9,26 +9,8 @@ https://stackoverflow.com/questions/53539314/what-is-withrouter-for-in-react-rou
 https://reacttraining.com/react-router/web/api/withRouter
 */
 
-const articleStyle = {
-  backgroundColor: 'blue',
-  padding: '10px',
-  marginTop: '20px',
-  marginLeft: '15px',
-  // width: '400px',
-  // height: '400px',
-  display: 'flex', // FIXME: ? changes this display
-  flexDirection: 'row',
-  // justifyContent: 'space-between',
-  // display: 'flex', this centers content in the article
-  justifyContent: 'flex-start',
-  flexWrap: 'wrap',
-};
-
-// TODO: MAKE THESE ALL A CLASS ONCE PUT IN STYLE SHEET
-const inlineStyle = {
-  display: 'inline',
-  marginTop: '0px',
-  marginLeft: '10px',
+const tableRowStyle = {
+  backgroundColor: 'grey',
 };
 
 const IterateTrackArtists = (item) => {
@@ -42,23 +24,33 @@ const IterateTrackArtists = (item) => {
 const TracksModalContent = props => {
   const displayTracks = props.playlistTracks.map((song, i) => (
     <Fragment key={song.track.id}>
-      <article style={articleStyle}>
-        <h6 style={inlineStyle}>{i + 1}</h6>
-        <h4 style={inlineStyle}>Track Name: {song.track.name}</h4> {/* track is the spotify API property */}
-        <h6 style={inlineStyle}>{IterateTrackArtists(song)}</h6>
-        <h6 style={inlineStyle}>Added: {song.added_at}</h6>
-        <h6 style={inlineStyle}>Album: {song.track.album.name}</h6>
-        <h6 style={inlineStyle}>Popularity: {song.track.popularity}</h6>
-      </article>
+      <tr style={tableRowStyle}>
+        <td>{i + 1}</td>
+        <td>Track Name: {song.track.name}</td>
+        {/* track is the spotify API property */}
+        <td>{IterateTrackArtists(song)}</td>
+        <td>Album: {song.track.album.name}</td>
+      </tr>
     </Fragment>
   ));
 
-
   return (
     <main>
-      <h1 style={inlineStyle}>Total Songs: {props.playlistTracks.length}</h1>
-      <button style={inlineStyle} onClick={() => { props.history.push(`/playlist/edit/${props.playlistId}`); }}>Edit Playlist</button>
-      {displayTracks}
+      <h1>Total Songs: {props.playlistTracks.length}</h1>
+      <button onClick={() => { props.history.push(`/playlist/edit/${props.playlistId}`); }}>Edit Playlist</button>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Artists</th>
+            <th>Album</th>
+          </tr>
+        </thead>
+        <tbody>
+          {displayTracks}
+        </tbody>
+      </table>
     </main>
   );
 };

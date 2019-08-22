@@ -63,7 +63,8 @@ class PlaylistEdit extends Component {
   }
 
   passTrackIdToDelete = (track) => {
-    this.setState({ tracksToDelete: [...this.state.tracksToDelete, { uri: `spotify:track:${track}`}]})
+    this.setState({
+      tracksToDelete: [...this.state.tracksToDelete, { uri: `spotify:track:${track}`}]})
   }
 /*<button onClick={() => this.passTrackIdToDelete(song.track.id)}>Delete</button>*/
 
