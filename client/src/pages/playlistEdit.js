@@ -13,7 +13,6 @@ const IterateTrackArtists = (item) => {
   const artistsArray = item.track.artists.map(artist => artist.name);
   return artistsArray.join(', ');
 };
-
 class PlaylistEdit extends Component {
   constructor(props) {
     super(props);
@@ -22,11 +21,6 @@ class PlaylistEdit extends Component {
     }
   }
 
-  showConfirmDeleteButton = (trackNumber) => { // TODO: modularize this to handle the other cases
-    if (this.state.tracksToDelete.length >=1) {
-      return <button onClick={()=>this.spotifyDeleteReq()}>Confirm Delete {trackNumber}</button>
-    }
-  }
   spotifyDeleteReq =() => { // TODO: MAKE REDUX ACTION
     const options = {
       method: 'DELETE',
@@ -48,7 +42,12 @@ class PlaylistEdit extends Component {
     this.setState({
       tracksToDelete: [...this.state.tracksToDelete, { uri: `spotify:track:${track}`}]})
   }
-/*<button onClick={() => this.passTrackIdToDelete(song.track.id)}>Delete</button>*/
+
+  showConfirmDeleteButton = (trackNumber) => { // TODO: modularize this to handle the other cases
+    if (this.state.tracksToDelete.length >=1) {
+      return <button onClick={()=>this.spotifyDeleteReq()}>Confirm Delete {trackNumber}</button>
+    }
+  }
 
   // FIXME: need to make parameter consistent. tracks one place, songs here, etc...
   displayTracks = this.props.playlistTracks.tracks.map((song, i) => (

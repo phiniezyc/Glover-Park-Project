@@ -45,17 +45,16 @@ class FetchTracksModal extends Component {
   }
 }
 
-// This function is used to convert redux global state to desired props.
-function mapStateToProps(state) {
-  // `state` variable contains whole redux state.
+// convert redux global state to desired props.
+function mapStateToProps(state) {// `state` = whole redux state.
   return {
     playlistTracks: state.playlistTracks.tracks
   };
 }
-// This function is used to provide callbacks to container component.
+// provide callbacks to container component.
 function mapDispatchToProps(dispatch) {
   return {
-    // This function will be available in component as `this.props.fetchPlaylistTracks`
+    // available in component as `this.props.fetchPlaylistTracks`
     fetchPlaylistTracks: playlistId => {
       dispatch(fetchPlaylistTracks(playlistId));
     }

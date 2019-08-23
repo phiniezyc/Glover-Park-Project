@@ -6,7 +6,7 @@ const { FETCH_TRACKS_REQUEST, FETCH_TRACKS_SUCCESS, FETCH_TRACKS_FAILURE } = FET
 export function fetchPlaylistTracks(playlistId) { // TODO: Abstract out to own file
   const access_token = sessionStorage.spotifyToken;
   // eslint-disable-next-line func-names
-  return (dispatch) => { // Instead of plain objects, we are returning function by redux design.
+  return (dispatch) => { // Instead of plain objects, we are return function--redux pattern.
     dispatch({
       type: FETCH_TRACKS_REQUEST,
     });
@@ -19,9 +19,8 @@ export function fetchPlaylistTracks(playlistId) { // TODO: Abstract out to own f
       },
     };
     return fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, options)
-    // Getting json body(will contain `tracks` or `error` prop,
-    // depending on request was failed or not) from server response
-    // And providing `response` and `body` variables to the next chain.
+    // Getting json body(`tracks`||`error` prop,) from response
+    // provide `response` and `body` variables to next chain.
       .then(response => response.json()
         .then(body => ({ response, body })))
       .then(({ response, body }) => {

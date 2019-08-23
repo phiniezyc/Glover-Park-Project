@@ -18,7 +18,6 @@ const Playlists = (props) => {
   const imgStyle = {
     width: 200,
     height: 200,
-    // display: 'block'
   };
   const playlists = props.playlists
     ? props.playlists.map(playlist => (
