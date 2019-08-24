@@ -3,7 +3,6 @@ import FetchTracksModal from './FetchTracksModal';
 
 
 const Playlists = (props) => {
-  // FIXME: Need to remove this styling.  Only for quick dev;
   const playlistDiv = {
     color: 'blue',
     minHeight: 300,

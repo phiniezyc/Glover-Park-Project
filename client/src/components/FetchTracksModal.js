@@ -12,7 +12,7 @@ const buttonDivStyle = {
 };
 class FetchTracksModal extends Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       showModal: false
     };
