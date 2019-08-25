@@ -1,3 +1,5 @@
 import { fetchPlaylistTracks } from './fetchPlaylistTracks';
 
-export default fetchPlaylistTracks;
+import { deletePlaylistTracks } from './deletePlaylistTracks';
+
+export { fetchPlaylistTracks, deletePlaylistTracks };

@@ -3,7 +3,7 @@ import { FETCH_TRACKS } from '../constants';
 const { FETCH_TRACKS_REQUEST, FETCH_TRACKS_SUCCESS, FETCH_TRACKS_FAILURE } = FETCH_TRACKS;
 /* eslint-disable camelcase */
 // eslint-disable-next-line import/prefer-default-export
-export function fetchPlaylistTracks(playlistId) { // TODO: Abstract out to own file
+export function fetchPlaylistTracks(playlistId) {
   const access_token = sessionStorage.spotifyToken;
   // eslint-disable-next-line func-names
   return (dispatch) => { // Instead of plain objects, we are return function--redux pattern.

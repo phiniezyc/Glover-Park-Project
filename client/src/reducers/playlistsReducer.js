@@ -1,10 +1,13 @@
-import { FETCH_TRACKS } from '../constants';
+import { FETCH_TRACKS, DELETE_TRACKS } from '../constants';
+
 
 const { FETCH_TRACKS_REQUEST, FETCH_TRACKS_SUCCESS, FETCH_TRACKS_FAILURE } = FETCH_TRACKS;
+const { DELETE_TRACKS_REQUEST, DELETE_TRACKS_SUCCESS, DELETE_TRACKS_FAILURE } = DELETE_TRACKS;
 
 const INITIAL_STATE = {
   tracks: [],
   isFetching: false,
+  isDeleting: false,
   error: undefined,
 };
 
@@ -20,6 +23,14 @@ function playlistTracksReducer(state = INITIAL_STATE, action) {
     case FETCH_TRACKS_FAILURE:
       // Provide error message to state for UI display.
       return { ...state, isFetching: false, error: action.error };
+
+    // DELETE TRACKS
+    case DELETE_TRACKS_REQUEST:
+      return { ...state, isDeleting: true };
+    case DELETE_TRACKS_SUCCESS:
+      return { ...state, isDeleting: false };
+    case DELETE_TRACKS_FAILURE:
+      return { ...state, isDeleting: false, error: action.error };
     default:
       return state;
   }

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import ReactModal from 'react-modal';
 import { connect } from 'react-redux';
-import fetchPlaylistTracks  from '../actions';
+import { fetchPlaylistTracks }  from '../actions';
 import TracksModalContent from './TracksModalContent';
 
 ReactModal.setAppElement('#root'); // ReactModal use for screen readers (see docs)

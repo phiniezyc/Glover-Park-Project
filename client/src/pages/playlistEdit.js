@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import dayjs from 'dayjs';
 
+import { deletePlaylistTracks }  from '../actions';
+
 
 const tableRowStyle = {
   backgroundColor: 'grey',
@@ -21,21 +23,8 @@ class PlaylistEdit extends Component {
     }
   }
 
-  spotifyDeleteReq =() => { // TODO: MAKE REDUX ACTION
-    const options = {
-      method: 'DELETE',
-      headers: {
-        Authorization: `Bearer ${window.sessionStorage.getItem('spotifyToken')}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        tracks: this.state.tracksToDelete
-      })
-    }
-    return fetch(`https://api.spotify.com/v1/playlists/${this.props.match.params.id}/tracks`, options)
-      .then(response => console.log(response.json()))
-      .then(this.setState({tracksToDelete: []}))
-      .catch(err => console.log(err))
+  spotifyDeleteReq = () => {
+    this.props.deletePlaylistTracks(this.props.match.params.id,this.state.tracksToDelete);
   }
 
   passTrackIdToDelete = (track) => {
@@ -97,4 +86,13 @@ class PlaylistEdit extends Component {
 
 const mapStateToProps = state => ({ playlistTracks: state.playlistTracks });
 
-export default connect(mapStateToProps)(PlaylistEdit);
+function mapDispatchToProps(dispatch) {
+  return {
+    // available in component as `this.props.deletePlaylistTracks`
+    deletePlaylistTracks: (playlistsId, tracksToDelete) => {
+      dispatch(deletePlaylistTracks(playlistsId, tracksToDelete));
+    }
+  };
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(PlaylistEdit);
