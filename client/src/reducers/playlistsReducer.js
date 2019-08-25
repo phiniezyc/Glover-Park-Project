@@ -8,6 +8,7 @@ const INITIAL_STATE = {
   tracks: [],
   isFetching: false,
   isDeleting: false,
+  tracksToDelete: [],
   error: undefined,
 };
 
@@ -28,7 +29,16 @@ function playlistTracksReducer(state = INITIAL_STATE, action) {
     case DELETE_TRACKS_REQUEST:
       return { ...state, isDeleting: true };
     case DELETE_TRACKS_SUCCESS:
-      return { ...state, isDeleting: false };
+      return {
+        ...state,
+        isDeleting: false,
+        tracks: state.items.filter((track) => {
+          if (state.tracksToDelete.includes(track.uri)) {
+            return false;
+          }
+          return true;
+        }),
+      };
     case DELETE_TRACKS_FAILURE:
       return { ...state, isDeleting: false, error: action.error };
     default:

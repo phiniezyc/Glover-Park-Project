@@ -9,6 +9,7 @@ export function deletePlaylistTracks(playlistsId, tracksToDelete) {
   return (dispatch) => {
     dispatch({
       type: DELETE_TRACKS_REQUEST,
+      tracksToDelete,
     });
 
     const options = {
@@ -33,7 +34,7 @@ export function deletePlaylistTracks(playlistsId, tracksToDelete) {
         } else {
           dispatch({
             type: DELETE_TRACKS_SUCCESS,
-            payload: body.items, // TODO: want to filter out the ids that we sent spotify to delete body.items.filter(user => user.id !== action.ids)
+            // payload: body.items, // TODO: want to filter out the ids that we sent spotify to delete body.items.filter(user => user.id !== action.ids)
           });
         }
       })
