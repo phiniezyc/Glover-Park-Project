@@ -22,7 +22,7 @@ const IterateTrackArtists = (item) => {
 
 // eslint-disable-next-line arrow-parens
 const TracksModalContent = props => {
-  const displayTracks = props.playlistTracks.map((song, i) => (
+  const displayTracks = [...props.playlistTracks].map((song, i) => (
     <Fragment key={song.track.id}>
       <tr style={tableRowStyle}>
         <td>{i + 1}</td>

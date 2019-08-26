@@ -19,7 +19,7 @@ const Playlists = (props) => {
     height: 200,
   };
   const playlists = props.playlists
-    ? props.playlists.map(playlist => (
+    ? [...props.playlists].map(playlist => (
       <article key={playlist.id} style={playlistDiv}>
         <h4>Playlist: </h4>
         {playlist.name}

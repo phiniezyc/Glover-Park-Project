@@ -30,8 +30,8 @@ function playlistTracksReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         isDeleting: true,
-        tracksToDelete: action.payload.tracksToDelete, // sends tracks to delete in spotify format
-        tracksToDeleteIDs: action.payload.tracksToDeleteIDs, // takes the tracks to delete ids so don't have to parse from tracksToDelete uris
+        tracksToDelete: [...action.payload.tracksToDelete], // sends tracks to delete in spotify format
+        tracksToDeleteIDs: [...action.payload.tracksToDeleteIDs], // takes the tracks to delete ids so don't have to parse from tracksToDelete uris
       };
     case DELETE_TRACKS_SUCCESS:
       return {

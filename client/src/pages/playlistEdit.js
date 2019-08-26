@@ -44,7 +44,7 @@ class PlaylistEdit extends Component {
   }
 
   // FIXME: need to make parameter consistent. tracks one place, songs here, etc...
-  displayTracks = this.props.playlistTracks.tracks.map((song, i) => (
+  displayTracks = [...this.props.playlistTracks.tracks].map((song, i) => (
     <Fragment key={song.track.id}>
         <tr style={tableRowStyle}>
           <td > <input type="button" value="Select"  onClick={() => this.passTrackIdToDelete(song.track.id)}/> </td>
