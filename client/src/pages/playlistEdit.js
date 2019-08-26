@@ -20,16 +20,21 @@ class PlaylistEdit extends Component {
     super(props);
     this.state = {
       tracksToDelete: [],
+      tracksToDeleteIDs: []
     }
   }
 
   spotifyDeleteReq = () => {
-    this.props.deletePlaylistTracks(this.props.match.params.id,this.state.tracksToDelete);
+    this.props.deletePlaylistTracks(this.props.match.params.id,{
+      tracksToDelete: this.state.tracksToDelete,
+      tracksToDeleteIDs: this.state.tracksToDeleteIDs });
   }
 
   passTrackIdToDelete = (track) => {
     this.setState({
-      tracksToDelete: [...this.state.tracksToDelete, { uri: `spotify:track:${track}`}]})
+      tracksToDelete: [...this.state.tracksToDelete, { uri: `spotify:track:${track}`}],
+      tracksToDeleteIDs: [...this.state.tracksToDeleteIDs, track]
+    })
   }
 
   showConfirmDeleteButton = (trackNumber) => { // TODO: modularize this to handle the other cases
@@ -84,7 +89,10 @@ class PlaylistEdit extends Component {
 }
 };
 
-const mapStateToProps = state => ({ playlistTracks: state.playlistTracks });
+const mapStateToProps = state => ({
+  playlistTracks: state.playlistTracks  // connects redux store to component
+
+});
 
 function mapDispatchToProps(dispatch) {
   return {

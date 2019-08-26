@@ -9,7 +9,7 @@ export function deletePlaylistTracks(playlistsId, tracksToDelete) {
   return (dispatch) => {
     dispatch({
       type: DELETE_TRACKS_REQUEST,
-      tracksToDelete,
+      payload: tracksToDelete,
     });
 
     const options = {
@@ -19,7 +19,7 @@ export function deletePlaylistTracks(playlistsId, tracksToDelete) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        tracks: tracksToDelete,
+        tracks: tracksToDelete.tracksToDelete,
       }),
     };
     return fetch(`https://api.spotify.com/v1/playlists/${playlistsId}/tracks`, options)

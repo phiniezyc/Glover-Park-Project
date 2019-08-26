@@ -9,6 +9,7 @@ const INITIAL_STATE = {
   isFetching: false,
   isDeleting: false,
   tracksToDelete: [],
+  tracksToDeleteIDs: [],
   error: undefined,
 };
 
@@ -27,13 +28,19 @@ function playlistTracksReducer(state = INITIAL_STATE, action) {
 
     // DELETE TRACKS
     case DELETE_TRACKS_REQUEST:
-      return { ...state, isDeleting: true };
+      return {
+        ...state,
+        isDeleting: true,
+        tracksToDelete: action.payload.tracksToDelete,
+        tracksToDeleteIDs: action.payload.tracksToDeleteIDs,
+      };
     case DELETE_TRACKS_SUCCESS:
       return {
         ...state,
         isDeleting: false,
-        tracks: state.items.filter((track) => {
-          if (state.tracksToDelete.includes(track.uri)) {
+        // tracksToDelete: action.payload.tracksToDelete,
+        tracks: state.tracks.filter((track) => {
+          if (state.tracksToDeleteIDs.includes(track.track.id)) { // FIXME: need to fix
             return false;
           }
           return true;
