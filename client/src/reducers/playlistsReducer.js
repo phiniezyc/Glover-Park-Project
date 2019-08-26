@@ -1,6 +1,5 @@
 import { FETCH_TRACKS, DELETE_TRACKS } from '../constants';
 
-
 const { FETCH_TRACKS_REQUEST, FETCH_TRACKS_SUCCESS, FETCH_TRACKS_FAILURE } = FETCH_TRACKS;
 const { DELETE_TRACKS_REQUEST, DELETE_TRACKS_SUCCESS, DELETE_TRACKS_FAILURE } = DELETE_TRACKS;
 
@@ -31,16 +30,17 @@ function playlistTracksReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         isDeleting: true,
-        tracksToDelete: action.payload.tracksToDelete,
-        tracksToDeleteIDs: action.payload.tracksToDeleteIDs,
+        tracksToDelete: action.payload.tracksToDelete, // sends tracks to delete in spotify format
+        tracksToDeleteIDs: action.payload.tracksToDeleteIDs, // takes the tracks to delete ids so don't have to parse from tracksToDelete uris
       };
     case DELETE_TRACKS_SUCCESS:
       return {
         ...state,
         isDeleting: false,
-        // tracksToDelete: action.payload.tracksToDelete,
-        tracks: state.tracks.filter((track) => {
-          if (state.tracksToDeleteIDs.includes(track.track.id)) { // FIXME: need to fix
+        tracksToDelete: [], // sets to empty once delete request successful
+        tracksToDeleteIDs: [],
+        tracks: state.tracks.filter((track) => { // updates tracks in state post delete req
+          if (state.tracksToDeleteIDs.includes(track.track.id)) {
             return false;
           }
           return true;
