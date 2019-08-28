@@ -19,7 +19,7 @@ function playlistTracksReducer(state = INITIAL_STATE, action) {
       return { ...state, isFetching: true }; // returns a new copy of state (immutable)
     case FETCH_TRACKS_SUCCESS:
       // Add derived todos to state
-      return { ...state, isFetching: false, tracks: action.payload };
+      return { ...state, isFetching: false, tracks: [...action.payload] };
       // tracks: [...state.tracks, ...action.tracks], = how to add to previous data
     case FETCH_TRACKS_FAILURE:
       // Provide error message to state for UI display.
