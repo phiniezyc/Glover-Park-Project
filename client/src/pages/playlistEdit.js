@@ -43,8 +43,11 @@ class PlaylistEdit extends Component {
     }
   }
 
-  // FIXME: need to make parameter consistent. tracks one place, songs here, etc...
-  displayTracks = [...this.props.playlistTracks.tracks].map((song, i) => (
+
+
+  render() {
+     // FIXME: need to make parameter consistent. tracks one place, songs here, etc...
+  const displayTracks = [...this.props.playlistTracks.tracks].map((song, i) => (
     <Fragment key={song.track.id}>
         <tr style={tableRowStyle}>
           <td > <input type="button" value="Select"  onClick={() => this.passTrackIdToDelete(song.track.id)}/> </td>
@@ -58,13 +61,12 @@ class PlaylistEdit extends Component {
     </Fragment>
   ));
 
-  render() {
     return (
       <Fragment>
         <header>
           <h2>Edit Tracks Here!</h2>
           <article>
-          <h3>{this.displayTracks.length}</h3>
+          <h3>{displayTracks.length}</h3>
           </article>
           {this.showConfirmDeleteButton(this.state.tracksToDelete.length)}
         </header>
@@ -81,7 +83,7 @@ class PlaylistEdit extends Component {
           </tr>
           </thead>
           <tbody>
-            {this.displayTracks}
+            {displayTracks}
           </tbody>
         </table>
       </Fragment>
