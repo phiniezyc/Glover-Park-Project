@@ -26,10 +26,10 @@ const TracksModalContent = props => {
     <Fragment key={song.track.id}>
       <tr style={tableRowStyle}>
         <td>{i + 1}</td>
-        <td>Track Name: {song.track.name}</td>
+        <td>{song.track.name}</td>
         {/* track is the spotify API property */}
         <td>{IterateTrackArtists(song)}</td>
-        <td>Album: {song.track.album.name}</td>
+        <td>{song.track.album.name}</td>
       </tr>
     </Fragment>
   ));
@@ -41,8 +41,8 @@ const TracksModalContent = props => {
       <table>
         <thead>
           <tr>
-            <th>#</th>
-            <th>Name</th>
+            <th />
+            <th>Track Name</th>
             <th>Artists</th>
             <th>Album</th>
           </tr>
