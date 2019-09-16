@@ -26,7 +26,9 @@ class PlaylistEdit extends Component {
   spotifyDeleteReq = () => {
     this.props.deletePlaylistTracks(this.props.match.params.id,{
       tracksToDelete: [...this.state.tracksToDelete],
-      tracksToDeleteIDs: [...this.state.tracksToDeleteIDs] });
+      tracksToDeleteIDs: [...this.state.tracksToDeleteIDs]
+    });
+    this.setState({tracksToDelete: []});
   }
 
   passTrackIdToDelete = (track) => {
