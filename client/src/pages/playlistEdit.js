@@ -36,9 +36,9 @@ class PlaylistEdit extends Component {
     })
   }
 
-  showConfirmDeleteButton = (trackNumber) => { // TODO: modularize this to handle the other cases
+  showConfirmDeleteButton = (totalTracksToDelete) => { // TODO: modularize this to handle the other cases
     if (this.state.tracksToDelete.length >=1) {
-      return <button onClick={()=>this.spotifyDeleteReq()}>Confirm Delete {trackNumber}</button>
+      return <button onClick={()=>this.spotifyDeleteReq()}>Confirm Delete {totalTracksToDelete}</button>
     }
   }
 
