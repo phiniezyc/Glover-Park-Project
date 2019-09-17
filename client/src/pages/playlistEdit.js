@@ -69,6 +69,7 @@ class PlaylistEdit extends Component {
           <h2>Edit Tracks Here!</h2>
           <article>
           <h3>{displayTracks.length}</h3>
+          <button onClick={() => { this.props.history.push(`/spotifyLoggedIn`); }}>See All Playlists</button>
           </article>
           {this.showConfirmDeleteButton(this.state.tracksToDelete.length)}
         </header>
