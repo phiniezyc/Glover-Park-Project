@@ -44,10 +44,7 @@ class PlaylistEdit extends Component {
     }
   }
 
-
-
   render() {
-
      // FIXME: need to make parameter consistent. tracks one place, songs here, etc...
   const displayTracks = [...this.props.playlistTracks.tracks].map((song, i) => (
     <Fragment key={song.track.id}>
@@ -62,7 +59,7 @@ class PlaylistEdit extends Component {
         </tr>
     </Fragment>
   ));
-
+  
     return (
       <Fragment>
         <header>
@@ -76,8 +73,8 @@ class PlaylistEdit extends Component {
         <table>
           <thead>
           <tr>
-            <th />
-            <th />
+            <th/>
+            <th/>
             <th>Track Name</th>
             <th>Artists</th>
             <th>Added</th>
@@ -94,9 +91,8 @@ class PlaylistEdit extends Component {
 }
 };
 
-const mapStateToProps = state => ({
-  playlistTracks: state.playlistTracks  // connects redux store to component
-
+const mapStateToProps = state => ({ // connects redux store to component
+  playlistTracks: state.playlistTracks
 });
 
 function mapDispatchToProps(dispatch) {

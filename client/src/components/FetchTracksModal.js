@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import { fetchPlaylistTracks }  from '../actions';
 import TracksModalContent from './TracksModalContent';
 
-ReactModal.setAppElement('#root'); // ReactModal use for screen readers (see docs)
-
 const buttonDivStyle = {
 
   flex: '100%'
@@ -16,6 +14,10 @@ class FetchTracksModal extends Component {
     this.state = {
       showModal: false
     };
+  }
+
+  componentDidMount() {
+    ReactModal.setAppElement('#root'); // Must be in lifecycle method because ReactModal package will seek to attack to an dom node before component has mounted.  Does not error app, but jest tests will fail otherwise.
   }
 
   handleCloseModal = () => {
