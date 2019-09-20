@@ -4,10 +4,17 @@ import {
   DELETE_TRACKS,
 } from '../constants';
 
-import rootReducer from './index';
+import playlistTracksReducer from './playlistsReducer';
 
-describe('spotifyTracks', () => {
+describe('fetch tracks', () => {
   it('should return initial state', () => {
-    expect(rootReducer.playlistTracks.PlaylistTracksReducer(undefined, {})).toEqual({ tracks: [] });
+    expect(playlistTracksReducer(undefined, {})).toEqual({
+      tracks: [],
+      isFetching: false,
+      isDeleting: false,
+      tracksToDelete: [],
+      tracksToDeleteIDs: [],
+      error: undefined,
+    });
   });
 });
