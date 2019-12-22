@@ -6,7 +6,7 @@
 
 import playlistTracksReducer from './playlistsReducer';
 
-describe('fetch tracks', () => {
+describe('playlist tracks', () => {
   const INITIAL_STATE = {
     tracks: [],
     isFetching: false,
