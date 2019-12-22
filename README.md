@@ -1,4 +1,4 @@
-# Spotify MixTape App: (contributions welcome)
+# Spotify MixTape App:
 
 ## Project uses
 
