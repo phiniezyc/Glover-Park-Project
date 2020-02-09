@@ -63,7 +63,7 @@ class spotifyLoggedIn extends Component {
     return (
       <React.Fragment>
         <header>
-          <h2>Here Are Your Spotify Playlists:</h2>
+          <h2>Your Spotify Playlists:</h2>
         </header>
         <PlaylistTracksDisplay>
           <Playlist playlists={statePlaylists} />
