@@ -57,7 +57,7 @@ class spotifyLoggedIn extends Component {
   render() {
     const statePlaylists = this.state.spotifyPlaylists.items;
     if (this.state.errorMessage) {
-      // FIXME: Remove this logic from render and make a function that returns based on the conditional logic to clean up
+      // FIXME: Remove this logic from render and make a function that returns based on conditional logic to clean up
       return <h3> Error: {this.state.errorMessage} </h3>;
     }
     return (
