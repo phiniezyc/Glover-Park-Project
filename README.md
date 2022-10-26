@@ -19,4 +19,5 @@ CLIENT_SECRET=XXXX_YOUR_SPOTIFY_CLIENT_SECRET_XXXX
 // Set Redirect URI in your spotify account. Change to match this exact URI
 REDIRECT_URI=http://localhost:3001/api/spotify/callback
 ```
-Creator: Chance Phiniezy
+## Authors
+* **Chance Phiniezy** - *Initial work* - [phiniezyc](https://github.com/phiniezyc)
